@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar';
+import VideoList from './components/video_list';
 import API_KEY from '../secret.js';
 
 class App extends Component {
@@ -11,7 +12,6 @@ class App extends Component {
     this.state = { videos: [] };
 
     YTSearch({key: API_KEY, term: 'surfboards'}, (videos) => {
-      //this.setState({ videos: videos }); //convert to ES6 below
       this.setState({ videos });
     })
   }
@@ -19,6 +19,7 @@ class App extends Component {
     return (
       <div>
         <SearchBar />
+        <VideoList videos={this.state.videos} />
       </div>
     );
   }
