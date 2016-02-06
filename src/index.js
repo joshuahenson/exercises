@@ -15,6 +15,3 @@ const App = () => {
 
 // This this component's HTML and put it in the DOM
 ReactDOM.render(<App />, document.querySelector('.container'));
-
-
-//15
