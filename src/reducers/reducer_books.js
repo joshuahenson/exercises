@@ -1,8 +1,8 @@
 export default function() {
   return [
-    { title: 'one' },
-    { title: 'two' },
-    { title: 'three' },
-    { title: 'four' }
+    { title: 'one', pages: 1 },
+    { title: 'two', pages: 2 },
+    { title: 'three', pages: 3 },
+    { title: 'four', pages: 4 }
   ]
 }
