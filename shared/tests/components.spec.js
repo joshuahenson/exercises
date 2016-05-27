@@ -55,7 +55,9 @@ describe('component tests', () => {
           <input placeholder="Author's Name" className="form-field" ref="name" />
           <input placeholder="Post Title" className="form-field" ref="title" />
           <textarea placeholder="Post Content" className="form-field" ref="content"></textarea>
-          <a className="post-submit-button align-right" href="#" onClick={function noop() {}}>Submit</a>
+          <a className="post-submit-button align-right" href="#" onClick={function noop() {}}>
+            Submit
+          </a>
         </div>
       </div>
     );
@@ -73,7 +75,9 @@ describe('component tests', () => {
           <input placeholder="Author's Name" className="form-field" ref="name" />
           <input placeholder="Post Title" className="form-field" ref="title" />
           <textarea placeholder="Post Content" className="form-field" ref="content"></textarea>
-          <a className="post-submit-button align-right" href="#" onClick={function noop() {}}>Submit</a>
+          <a className="post-submit-button align-right" href="#" onClick={function noop() {}}>
+            Submit
+          </a>
         </div>
       </div>
     );
