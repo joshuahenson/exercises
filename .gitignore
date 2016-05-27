@@ -1,0 +1,7 @@
+node_modules/
+npm-debug.log
+.idea/
+dump.rdb
+public/*
+static/dist
+static/css/app.min.css
