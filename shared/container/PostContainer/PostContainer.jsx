@@ -1,8 +1,8 @@
 import React, { PropTypes, Component } from 'react';
 import PostListView from '../PostListView/PostListView';
 import PostCreateView from '../../components/PostCreateView/PostCreateView';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import { connect } from 'react-redux';
 import * as Actions from '../../redux/actions/actions';
 
@@ -32,7 +32,7 @@ class PostContainer extends Component {
   }
 
   componentDidMount() {
-    if(this.props.posts.length === 0) {
+    if (this.props.posts.length === 0) {
       this.props.dispatch(Actions.fetchPosts());
     }
   }
@@ -43,8 +43,9 @@ class PostContainer extends Component {
         <Header onClick={this.handleClick} />
         <div className="container">
           <PostCreateView addPost={this.add}
-            showAddPost={this.state.showAddPost}/>
-          <PostListView posts={this.props.posts}/>
+            showAddPost={this.state.showAddPost}
+          />
+          <PostListView posts={this.props.posts} />
         </div>
         <Footer />
       </div>

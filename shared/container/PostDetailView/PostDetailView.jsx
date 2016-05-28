@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import * as Actions from '../../redux/actions/actions';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import Helmet from 'react-helmet';
 
 class PostDetailView extends Component {
@@ -28,7 +28,7 @@ class PostDetailView extends Component {
       <div>
         <Helmet title={this.props.post.title} />
 
-        <Header onClick={function noop() {}} handleLogoClick={this.handleLogoClick}/>
+        <Header onClick={function noop() {}} handleLogoClick={this.handleLogoClick} />
         <div className="container">
           <div className="single-post post-detail">
             <h3 className="post-title">{this.props.post.title}</h3>
