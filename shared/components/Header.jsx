@@ -1,26 +1,24 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
-function Header(props, context) {
+function Header(props) {
   return (
-    <div className="header">
-      <div className="header-content">
-        <h1 className="site-title">
+    <Navbar>
+      <Navbar.Header>
+        <Navbar.Brand>
           <Link to="/" onClick={props.handleLogoClick}>Poll</Link>
-        </h1>
-        {
-          context.router.isActive('/', true)
-            ? <a className="add-post-button" href="#" onClick={props.onClick}>Add Post</a>
-            : null
-        }
-      </div>
-    </div>
+        </Navbar.Brand>
+      </Navbar.Header>
+      <Nav>
+        <LinkContainer to="/post/lorem-ipsum-cikqgkv4q01ck7453ualdn3hf">
+          <NavItem>Lorem test active</NavItem>
+        </LinkContainer>
+      </Nav>
+    </Navbar>
   );
 }
-
-Header.contextTypes = {
-  router: React.PropTypes.object,
-};
 
 Header.propTypes = {
   onClick: PropTypes.func.isRequired,
