@@ -59,13 +59,13 @@ const renderFullPage = (html, initialState) => {
     <!doctype html>
     <html>
       <head>
-        ${head.base.toString()}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         ${head.title.toString()}
-        ${head.meta.toString()}
-        ${head.link.toString()}
-        ${head.script.toString()}
-
-        <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/slate/bootstrap.min.css" rel="stylesheet" integrity="sha384-X9JiR5BtXUXiV6R3XuMyVGefFyy+18PHpBwaMfteb/vd2RrK6Gt4KPenkQyWLxCC" crossorigin="anonymous">        <link rel="stylesheet" href=${cssPath} />
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/slate/bootstrap.min.css" rel="stylesheet" integrity="sha384-X9JiR5BtXUXiV6R3XuMyVGefFyy+18PHpBwaMfteb/vd2RrK6Gt4KPenkQyWLxCC" crossorigin="anonymous">
+        <link rel="stylesheet" href=${cssPath} />
         <link rel="shortcut icon" href="http://res.cloudinary.com/henson/image/upload/v1464461170/favicon_kpdqcs.png" type="image/png" />
       </head>
       <body>

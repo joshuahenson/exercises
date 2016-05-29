@@ -2,12 +2,12 @@ import React from 'react';
 
 function Footer() {
   return (
-    <div className="footer">
+    <footer className="footer">
       <p>
-        Sample Universal React App by Joshua Henson:
+        Sample Universal React App by Joshua Henson:&nbsp;
         <a href="https://github.com/joshuahenson/poll" target="_Blank">Source</a>
       </p>
-    </div>
+    </footer>
  );
 }
 

@@ -1,8 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import * as Actions from '../../redux/actions/actions';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
 import Helmet from 'react-helmet';
 
 class PostDetailView extends Component {
@@ -28,7 +26,6 @@ class PostDetailView extends Component {
       <div>
         <Helmet title={this.props.post.title} />
 
-        <Header onClick={function noop() {}} handleLogoClick={this.handleLogoClick} />
         <div className="container">
           <div className="single-post post-detail">
             <h3 className="post-title">{this.props.post.title}</h3>
@@ -36,7 +33,6 @@ class PostDetailView extends Component {
             <p className="post-desc">{this.props.post.content}</p>
           </div>
         </div>
-        <Footer />
       </div>
     );
   }

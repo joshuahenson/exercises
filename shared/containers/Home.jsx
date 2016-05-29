@@ -1,12 +1,10 @@
 import React, { PropTypes, Component } from 'react';
-import PostListView from '../PostListView/PostListView';
-import PostCreateView from '../../components/PostCreateView/PostCreateView';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import PostListView from './PostListView/PostListView';
+import PostCreateView from './../components/PostCreateView/PostCreateView';
 import { connect } from 'react-redux';
-import * as Actions from '../../redux/actions/actions';
+import * as Actions from './../redux/actions/actions';
 
-class PostContainer extends Component {
+class Home extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
@@ -14,6 +12,12 @@ class PostContainer extends Component {
     };
     this.handleClick = this.handleClick.bind(this);
     this.add = this.add.bind(this);
+  }
+
+  componentDidMount() {
+    if (this.props.posts.length === 0) {
+      this.props.dispatch(Actions.fetchPosts());
+    }
   }
 
   handleClick(e) {
@@ -31,30 +35,21 @@ class PostContainer extends Component {
     });
   }
 
-  componentDidMount() {
-    if (this.props.posts.length === 0) {
-      this.props.dispatch(Actions.fetchPosts());
-    }
-  }
-
   render() {
     return (
       <div>
-        <Header onClick={this.handleClick} />
-        <div className="container">
-          <PostCreateView addPost={this.add}
-            showAddPost={this.state.showAddPost}
-          />
-          <PostListView posts={this.props.posts} />
-        </div>
-        <Footer />
+        <PostCreateView
+          addPost={this.add}
+          showAddPost={this.state.showAddPost}
+        />
+        <PostListView posts={this.props.posts} />
       </div>
     );
   }
 }
 
-PostContainer.need = [() => { return Actions.fetchPosts(); }];
-PostContainer.contextTypes = {
+Home.need = [() => Actions.fetchPosts()];
+Home.contextTypes = {
   router: React.PropTypes.object,
 };
 
@@ -64,7 +59,7 @@ function mapStateToProps(store) {
   };
 }
 
-PostContainer.propTypes = {
+Home.propTypes = {
   posts: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -73,4 +68,4 @@ PostContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps)(PostContainer);
+export default connect(mapStateToProps)(Home);

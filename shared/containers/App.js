@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
+import Header from './../containers/Header';
+import Footer from './../components/Footer';
 
 class App extends Component {
   render() {
@@ -8,21 +10,11 @@ class App extends Component {
       <div>
         <Helmet
           title="Poll"
-          titleTemplate="%s - Universal React"
-          meta={[
-            { charset: 'utf-8' },
-            {
-              'http-equiv': 'X-UA-Compatible',
-              content: 'IE=edge',
-            },
-            {
-              name: 'viewport',
-              content: 'width=device-width, initial-scale=1',
-            },
-          ]}
+          titleTemplate="%s - Universal React Example"
         />
-
+        <Header />
         {this.props.children}
+        <Footer />
       </div>
     );
   }
