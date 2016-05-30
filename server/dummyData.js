@@ -1,4 +1,6 @@
+/* eslint no-console: 0 */
 import Post from './models/post';
+import Poll from './models/poll';
 
 export default function () {
   Post.count().exec((err, count) => {
@@ -35,7 +37,7 @@ export default function () {
       ipsum quia dolor sit amet.`;
 
     const post1 = new Post({
-      name: 'Admin', title: 'Hello MERN', slug: 'hello-mern',
+      name: 'Admin', title: 'Hello Joshua', slug: 'hello-joshua',
       cuid: 'cikqgkv4q01ck7453ualdn3hd', content: content1
     });
     const post2 = new Post({
@@ -45,7 +47,31 @@ export default function () {
 
     Post.create([post1, post2], (error) => {
       if (!error) {
-        // console.log('ready to go....');
+        console.log('creating Posts');
+      }
+    });
+  });
+  Poll.count().exec((err, count) => {
+    if (count > 0) {
+      return;
+    }
+
+    const poll1 = new Poll({
+      name: 'Xander', title: 'Favorite Toy', slug: 'favorite-toy',
+      cuid: 'cikqgkv4q01ck7453ualdn3hg',
+      options: [{ option: 'train', votes: 0 }, { option: 'bike', votes: 1 }]
+    });
+    const poll2 = new Poll({
+      name: 'Emily', title: 'Favorite Show', slug: 'favorite-show',
+      cuid: 'cikqgkv4q01ck7453ualdn3hh',
+      options: [{ option: 'titans', votes: 0 }, { option: 'ladybug', votes: 1 }]
+    });
+
+    Poll.create([poll1, poll2], (error) => {
+      if (!error) {
+        console.log('creating Polls');
+      } else {
+        console.log('error creating Polls', error);
       }
     });
   });
