@@ -1,71 +1,48 @@
 import React, { PropTypes, Component } from 'react';
-import PostListView from './PostListView/PostListView';
-import PostCreateView from './../components/PostCreateView/PostCreateView';
 import { connect } from 'react-redux';
 import * as Actions from './../redux/actions/actions';
+import { Link } from 'react-router';
 
 class Home extends Component {
-  constructor(props, context) {
-    super(props, context);
-    this.state = {
-      showAddPost: false,
-    };
-    this.handleClick = this.handleClick.bind(this);
-    this.add = this.add.bind(this);
-  }
 
   componentDidMount() {
-    if (this.props.posts.length === 0) {
-      this.props.dispatch(Actions.fetchPosts());
+    if (this.props.polls.length === 0) {
+      this.props.dispatch(Actions.fetchPolls());
     }
-  }
-
-  handleClick(e) {
-    this.setState({
-      showAddPost: !this.state.showAddPost,
-    });
-
-    e.preventDefault();
-  }
-
-  add(name, title, content) {
-    this.props.dispatch(Actions.addPostRequest({ name, title, content }));
-    this.setState({
-      showAddPost: false,
-    });
   }
 
   render() {
     return (
       <div>
-        <PostCreateView
-          addPost={this.add}
-          showAddPost={this.state.showAddPost}
-        />
-        <PostListView posts={this.props.posts} />
+        {this.props.polls.map((poll, i) => (
+          <div key={i}>
+            <h3>
+              <Link
+                to={`/poll/${poll.slug}-${poll.cuid}`}
+                onClick={() => this.props.dispatch(Actions.addSelectedPoll(poll))}
+              >
+                {poll.title}
+              </Link>
+            </h3>
+            <p>By {poll.name}</p>
+          </div>
+          ))}
       </div>
     );
   }
 }
 
-Home.need = [() => Actions.fetchPosts()];
-Home.contextTypes = {
-  router: React.PropTypes.object,
+Home.need = [() => Actions.fetchPolls()];
+
+Home.propTypes = {
+  polls: PropTypes.array,
+  dispatch: PropTypes.func.isRequired,
 };
 
 function mapStateToProps(store) {
   return {
-    posts: store.posts,
+    polls: store.polls
   };
 }
-
-Home.propTypes = {
-  posts: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
-  })).isRequired,
-  dispatch: PropTypes.func.isRequired,
-};
 
 export default connect(mapStateToProps)(Home);

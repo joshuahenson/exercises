@@ -2,12 +2,12 @@ import { Route, IndexRoute } from 'react-router';
 import React from 'react';
 import App from './containers/App';
 import Home from './containers/Home';
-import PostDetailView from './containers/PostDetailView/PostDetailView';
+import PollDetail from './containers/PollDetail';
 
 const routes = (
   <Route path="/" component={App} >
     <IndexRoute component={Home} />
-    <Route path="/post/:slug" component={PostDetailView} />
+    <Route path="/poll/:slug" component={PollDetail} />
   </Route>
 );
 

@@ -17,8 +17,8 @@ class Header extends Component {
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            <LinkContainer to="/post/lorem-ipsum-cikqgkv4q01ck7453ualdn3hf">
-              <NavItem>Lorem test active</NavItem>
+            <LinkContainer to="/poll/favorite-show-cikqgkv4q01ck7453ualdn3hh">
+              <NavItem>Test active only</NavItem>
             </LinkContainer>
           </Nav>
         </Navbar.Collapse>
