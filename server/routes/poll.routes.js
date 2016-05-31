@@ -9,9 +9,9 @@ router.route('/getPolls').get(PollController.getPolls);
 router.route('/getPoll').get(PollController.getPoll);
 
 // Add a new Poll
-router.route('/addPoll').poll(PollController.addPoll);
+router.route('/addPoll').post(PollController.addPoll);
 
 // Delete a Poll
-router.route('/deletePoll').poll(PollController.deletePoll);
+router.route('/deletePoll').post(PollController.deletePoll);
 
 export default router;

@@ -17,14 +17,17 @@ export function addPoll(req, res) {
     res.status(403).end();
   }
 
-// TODO: confirm whether newPoll.options works
-
   const newPoll = new Poll(req.body.poll);
 
   // Let's sanitize inputs
   newPoll.title = sanitizeHtml(newPoll.title);
   newPoll.name = sanitizeHtml(newPoll.name);
-  newPoll.options = sanitizeHtml(newPoll.options);
+  newPoll.options.forEach((obj) => {
+    const rObj = {};
+    rObj.option = sanitizeHtml(obj.option);
+    rObj.votes = sanitizeHtml(obj.votes);
+    return rObj;
+  });
 
   newPoll.slug = slug(newPoll.title.toLowerCase(), { lowercase: true });
   newPoll.cuid = cuid();

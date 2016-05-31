@@ -10,18 +10,18 @@ import Post from '../models/post';
 const expect = chai.expect;
 
 function connectDB(done) {
-  if (mongoose.connection.name !== 'mern-test') {
+  if (mongoose.connection.name !== 'poll-test') {
     return done();
   }
 
-  mongoose.connect((process.env.MONGO_URL || 'mongodb://localhost:27017/mern-test'), function (err) {
+  mongoose.connect((process.env.MONGO_URL || 'mongodb://localhost:27017/poll-test'), function (err) {
     if (err) return done(err);
     done();
   });
 }
 
 function dropDB(done) {
-  if (mongoose.connection.name !== 'mern-test') {
+  if (mongoose.connection.name !== 'poll-test') {
     return done();
   }
 
