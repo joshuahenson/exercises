@@ -1,5 +1,5 @@
 import expect from 'expect';
-import postReducer from '../redux/reducers/reducer';
+import rootReducer from '../redux/reducers/index';
 import deepFreeze from 'deep-freeze';
 import * as ActionTypes from '../redux/constants/constants';
 
@@ -26,7 +26,7 @@ describe('reducer tests', () => {
     };
     deepFreeze(stateBefore);
     deepFreeze(action);
-    expect(stateAfter).toEqual(postReducer(stateBefore, action));
+    expect(stateAfter).toEqual(rootReducer(stateBefore, action));
   });
 
   it('action ADD_SELECTED_POST is working', () => {
@@ -39,7 +39,7 @@ describe('reducer tests', () => {
         slug: 'first-post',
 
       }],
-      selectedPost: null,
+      post: null,
     };
 
     const stateAfter = {
@@ -72,6 +72,6 @@ describe('reducer tests', () => {
 
     deepFreeze(stateBefore);
     deepFreeze(action);
-    expect(stateAfter).toEqual(postReducer(stateBefore, action));
+    expect(stateAfter).toEqual(rootReducer(stateBefore, action));
   });
 });
