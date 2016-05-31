@@ -13,12 +13,15 @@ class Header extends Component {
           <Navbar.Brand>
             <Link to="/" onClick={() => this.props.fetchPosts()}>Poll</Link>
           </Navbar.Brand>
+          <Navbar.Toggle />
         </Navbar.Header>
-        <Nav>
-          <LinkContainer to="/post/lorem-ipsum-cikqgkv4q01ck7453ualdn3hf">
-            <NavItem>Lorem test active</NavItem>
-          </LinkContainer>
-        </Nav>
+        <Navbar.Collapse>
+          <Nav>
+            <LinkContainer to="/post/lorem-ipsum-cikqgkv4q01ck7453ualdn3hf">
+              <NavItem>Lorem test active</NavItem>
+            </LinkContainer>
+          </Nav>
+        </Navbar.Collapse>
       </Navbar>
     );
   }
