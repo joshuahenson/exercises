@@ -11,7 +11,7 @@ class Header extends Component {
       <Navbar>
         <Navbar.Header>
           <Navbar.Brand>
-            <Link to="/" onClick={() => this.props.fetchPosts()}>Poll</Link>
+            <Link to="/" onClick={() => this.props.fetchPolls()}>Poll</Link>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
@@ -28,7 +28,7 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  fetchPosts: PropTypes.func
+  fetchPolls: PropTypes.func
 };
 
 // withRouter helps with temp issue with LinkContainer tracking active status
