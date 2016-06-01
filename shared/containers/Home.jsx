@@ -25,7 +25,7 @@ class Home extends Component {
                   <h3>
                     {poll.title}
                   </h3>
-                  <p>By {poll.name}</p>
+                  <p>by {poll.name}</p>
                 </div>
               </div>
             </Link>

@@ -10,12 +10,13 @@ export default function () {
     const poll1 = new Poll({
       name: 'Xander', title: 'Favorite Toy', slug: 'favorite-toy',
       cuid: 'cikqgkv4q01ck7453ualdn3hg',
-      options: [{ option: 'train', votes: 0 }, { option: 'bike', votes: 1 }]
+      options: [{ option: 'train', votes: 1 }, { option: 'bike', votes: 1 },
+        { option: 'tablet', votes: 1 }]
     });
     const poll2 = new Poll({
       name: 'Emily', title: 'Favorite Show', slug: 'favorite-show',
       cuid: 'cikqgkv4q01ck7453ualdn3hh',
-      options: [{ option: 'titans', votes: 0 }, { option: 'ladybug', votes: 1 }]
+      options: [{ option: 'titans', votes: 4 }, { option: 'ladybug', votes: 1 }]
     });
 
     Poll.create([poll1, poll2], (error) => {
