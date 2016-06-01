@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
-import Header from './../containers/Header';
+import NavBar from './../containers/NavBar';
 import Footer from './../components/Footer';
 
 class App extends Component {
@@ -12,7 +12,7 @@ class App extends Component {
           title="Poll"
           titleTemplate="%s - Universal React Example"
         />
-        <Header />
+        <NavBar />
         {this.props.children}
         <Footer />
       </div>
