@@ -25,9 +25,10 @@ class PollDetail extends Component {
   }
   render() {
     const pieOptions = {
-      animateScale: true,
+      // animateScale: true,
       animationEasing: 'easeInOutQuint',
-      responsive: true
+      responsive: true,
+      segmentShowStroke: false
     };
 
     return (
