@@ -26,7 +26,7 @@ export function changeSelectedPoll(slug) {
 export function addPollRequest(poll) {
   return (dispatch) => {
     fetch(`${baseURL}/api/addPoll`, {
-      method: 'poll',
+      method: 'post',
       body: JSON.stringify({
         poll: {
           name: poll.name,
@@ -80,7 +80,7 @@ export function fetchPolls() {
 export function deletePollRequest(poll) {
   return (dispatch) => {
     fetch(`${baseURL}/api/deletePoll`, {
-      method: 'poll',
+      method: 'post',
       body: JSON.stringify({
         pollId: poll._id,
       }),
@@ -88,5 +88,12 @@ export function deletePollRequest(poll) {
         'Content-Type': 'application/json',
       }),
     }).then(() => dispatch(deletePoll(poll)));
+  };
+}
+
+export function showModal(bool) {
+  return {
+    type: ActionTypes.SHOW_MODAL,
+    bool,
   };
 }
