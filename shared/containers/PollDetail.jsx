@@ -4,6 +4,8 @@ import * as Actions from '../redux/actions/actions';
 import Helmet from 'react-helmet';
 import { Pie } from 'react-chartjs';
 import colorLuminance from '../util/colorLuminance';
+import { Button } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 class PollDetail extends Component {
   chartData() {
@@ -30,7 +32,7 @@ class PollDetail extends Component {
       responsive: true,
       segmentShowStroke: false
     };
-
+    // TODO: move delete to dashboard or provide other conditional before showing
     return (
       <div className="row">
         <Helmet title={this.props.poll.title} />
@@ -40,6 +42,14 @@ class PollDetail extends Component {
         <div className="col-sm-6">
           <h3>{this.props.poll.title}</h3>
           <p>by {this.props.poll.name}</p>
+          <LinkContainer to="/">
+            <Button
+              bsSize="small" bsStyle="danger"
+              onClick={() => this.props.dispatch(Actions.deletePollRequest(this.props.poll))}
+            >
+              Delete
+            </Button>
+          </LinkContainer>
         </div>
       </div>
     );
@@ -49,7 +59,8 @@ class PollDetail extends Component {
 PollDetail.need = [(params) => Actions.getPollRequest.bind(null, params.slug)()];
 
 PollDetail.propTypes = {
-  poll: PropTypes.object
+  poll: PropTypes.object,
+  dispatch: PropTypes.func
 };
 
 function mapStateToProps(store) {
