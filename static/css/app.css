@@ -16,3 +16,22 @@ body {
 a svg {
   vertical-align: middle;
 }
+
+input[type="radio"] {
+  display: none;
+}
+
+label input[type="radio"] ~ .glyphicon.glyphicon-ok {
+  visibility: hidden;
+  margin-right: 5px;
+}
+
+label input[type="radio"]:checked ~ .glyphicon.glyphicon-ok {
+  color: #7AA3CC;
+  visibility: visible;
+  margin-right: 5px;
+}
+
+.p-b {
+  padding-bottom: 20px;
+}

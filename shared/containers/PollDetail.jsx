@@ -49,36 +49,46 @@ class PollDetail extends Component {
     };
     // TODO: move delete to dashboard or provide other conditional before showing
     return (
-      <div className="row">
-        <Helmet title={this.props.poll.title} />
-        <div className="col-sm-6">
-          <Pie data={this.chartData()} options={pieOptions} />
+      <div>
+        <div className="row p-b">
+          <div className="col-xs-12 text-center">
+            <h3>{this.props.poll.title}<small> by {this.props.poll.name}</small></h3>
+          </div>
         </div>
-        <div className="col-sm-6">
-          <h3>{this.props.poll.title}</h3>
-          <p>by {this.props.poll.name}</p>
-          <form>
-            {this.props.poll.options.map((obj, i) =>
-              <div className="radio" key={i}>
-                <label>
-                  <input type="radio" name="option" onChange={this.radioClick} value={obj._id} />
-                  {obj.option}
-                </label>
-              </div>
-            )}
-            <Button bsStyle="primary" onClick={this.vote}>
-              Vote
+        <div className="row">
+          <Helmet title={this.props.poll.title} />
+          <div className="col-sm-6">
+            <div className="well">
+              <form>
+                {this.props.poll.options.map((obj, i) =>
+                  <div className="radio" key={i}>
+                    <label>
+                      <input
+                        type="radio" name="option" onChange={this.radioClick} value={obj._id}
+                      />
+                      <span className="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                      {obj.option}
+                    </label>
+                  </div>
+                )}
+                <Button bsStyle="primary" onClick={this.vote} block>
+                  Vote
+                </Button>
+              </form>
+            </div>
+          </div>
+          <div className="col-sm-6">
+            <Pie data={this.chartData()} options={pieOptions} />
+          </div>
+          <LinkContainer to="/">
+            <Button
+              bsSize="small" bsStyle="danger"
+              onClick={() => this.props.dispatch(Actions.deletePollRequest(this.props.poll))}
+            >
+              Delete
             </Button>
-          </form>
+          </LinkContainer>
         </div>
-        <LinkContainer to="/">
-          <Button
-            bsSize="small" bsStyle="danger"
-            onClick={() => this.props.dispatch(Actions.deletePollRequest(this.props.poll))}
-          >
-            Delete
-          </Button>
-        </LinkContainer>
       </div>
     );
   }
