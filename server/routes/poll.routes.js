@@ -14,4 +14,7 @@ router.route('/addPoll').post(PollController.addPoll);
 // Delete a Poll
 router.route('/deletePoll').post(PollController.deletePoll);
 
+// Vote on Poll option
+router.route('/vote').post(PollController.vote);
+
 export default router;

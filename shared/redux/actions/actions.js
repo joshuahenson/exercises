@@ -98,3 +98,33 @@ export function vote(pollId, optionId) {
     optionId
   };
 }
+
+// export function voteRequest(optionId) {
+//   return (dispatch) => {
+//     fetch(`${baseURL}/api/vote`, {
+//       method: 'post',
+//       body: JSON.stringify({
+//         option: {
+//           _id: optionId,
+//         },
+//       }),
+//       headers: new Headers({
+//         'Content-Type': 'application/json',
+//       }),
+//     }).then((res) => res.json()).then(res => dispatch(addPoll(res.poll)));
+//   };
+// }
+export function voteRequest(pollId, optionId) {
+  return () => {
+    fetch(`${baseURL}/api/vote`, {
+      method: 'post',
+      body: JSON.stringify({
+        pollId,
+        optionId
+      }),
+      headers: new Headers({
+        'Content-Type': 'application/json',
+      }),
+    });
+  };
+}

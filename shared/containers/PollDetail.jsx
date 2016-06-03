@@ -19,7 +19,9 @@ class PollDetail extends Component {
   }
   vote(e) {
     e.preventDefault();
+    // testing separate reducer and async actions
     this.props.dispatch(Actions.vote(this.props.poll._id, this.state.vote));
+    this.props.dispatch(Actions.voteRequest(this.props.poll._id, this.state.vote));
   }
   chartData() {
     const colors = ['#a6cee3', '#1f78b4', '#b2df8a', '#33a02c', '#fb9a99',

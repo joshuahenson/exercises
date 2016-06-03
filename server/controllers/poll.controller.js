@@ -62,3 +62,17 @@ export function deletePoll(req, res) {
     );
   });
 }
+
+export function vote(req, res) {
+  const pollId = req.body.pollId;
+  const optionId = req.body.optionId;
+  Poll.update(
+    { _id: pollId, 'options._id': optionId },
+    { $inc: { 'options.$.votes': 1 } })
+    .exec((err) => {
+      if (err) {
+        res.status(500).send(err);
+      }
+      res.status(200).end();
+    });
+}
