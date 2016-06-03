@@ -8,6 +8,19 @@ import { Button } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 class PollDetail extends Component {
+  constructor(props) {
+    super(props);
+    this.radioClick = this.radioClick.bind(this);
+    this.vote = this.vote.bind(this);
+    this.state = { vote: null };
+  }
+  radioClick(e) {
+    this.setState({ vote: e.target.value });
+  }
+  vote(e) {
+    e.preventDefault();
+    this.props.dispatch(Actions.vote(this.props.poll._id, this.state.vote));
+  }
   chartData() {
     const colors = ['#a6cee3', '#1f78b4', '#b2df8a', '#33a02c', '#fb9a99',
       '#e31a1c', '#fdbf6f', '#ff7f00', '#cab2d6', '#6a3d9a'];
@@ -37,20 +50,33 @@ class PollDetail extends Component {
       <div className="row">
         <Helmet title={this.props.poll.title} />
         <div className="col-sm-6">
-          <Pie data={this.chartData()} options={pieOptions} redraw />
+          <Pie data={this.chartData()} options={pieOptions} />
         </div>
         <div className="col-sm-6">
           <h3>{this.props.poll.title}</h3>
           <p>by {this.props.poll.name}</p>
-          <LinkContainer to="/">
-            <Button
-              bsSize="small" bsStyle="danger"
-              onClick={() => this.props.dispatch(Actions.deletePollRequest(this.props.poll))}
-            >
-              Delete
+          <form>
+            {this.props.poll.options.map((obj, i) =>
+              <div className="radio" key={i}>
+                <label>
+                  <input type="radio" name="option" onChange={this.radioClick} value={obj._id} />
+                  {obj.option}
+                </label>
+              </div>
+            )}
+            <Button bsStyle="primary" onClick={this.vote}>
+              Vote
             </Button>
-          </LinkContainer>
+          </form>
         </div>
+        <LinkContainer to="/">
+          <Button
+            bsSize="small" bsStyle="danger"
+            onClick={() => this.props.dispatch(Actions.deletePollRequest(this.props.poll))}
+          >
+            Delete
+          </Button>
+        </LinkContainer>
       </div>
     );
   }

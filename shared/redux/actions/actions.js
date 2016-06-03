@@ -16,13 +16,6 @@ export function addPoll(poll) {
   };
 }
 
-export function changeSelectedPoll(slug) {
-  return {
-    type: ActionTypes.CHANGE_SELECTED_POLL,
-    slug,
-  };
-}
-
 export function addPollRequest(poll) {
   return (dispatch) => {
     fetch(`${baseURL}/api/addPoll`, {
@@ -95,5 +88,13 @@ export function showModal(bool) {
   return {
     type: ActionTypes.SHOW_MODAL,
     bool,
+  };
+}
+
+export function vote(pollId, optionId) {
+  return {
+    type: ActionTypes.VOTE,
+    pollId,
+    optionId
   };
 }
