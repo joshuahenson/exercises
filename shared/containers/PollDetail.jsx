@@ -6,6 +6,7 @@ import { Pie } from 'react-chartjs';
 import colorLuminance from '../util/colorLuminance';
 import { Button } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import { canUseDOM } from 'exenv';
 
 class PollDetail extends Component {
   constructor(props) {
@@ -48,6 +49,7 @@ class PollDetail extends Component {
       segmentShowStroke: false
     };
     // TODO: move delete to dashboard or provide other conditional before showing
+    // TODO: work on noscript to get most up to date results from server
     return (
       <div>
         <div className="row p-b">
@@ -78,7 +80,14 @@ class PollDetail extends Component {
             </div>
           </div>
           <div className="col-sm-6">
-            <Pie data={this.chartData()} options={pieOptions} />
+            {canUseDOM ? <Pie data={this.chartData()} options={pieOptions} /> :
+              <noscript>
+                Poll results:<br />
+                {this.props.poll.options.map((obj, i) =>
+                  <div key={i}>{obj.option} - {obj.votes}<br /></div>
+                )}
+                <small>Javascript must be enabled to fully interact with this site!</small>
+              </noscript>}
           </div>
           <LinkContainer to="/">
             <Button
