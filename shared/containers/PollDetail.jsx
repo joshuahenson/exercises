@@ -2,11 +2,9 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import * as Actions from '../redux/actions/actions';
 import Helmet from 'react-helmet';
-import { Pie } from 'react-chartjs';
-import colorLuminance from '../util/colorLuminance';
+import { VictoryPie } from 'victory';
 import { Button } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import { canUseDOM } from 'exenv';
 
 class PollDetail extends Component {
   constructor(props) {
@@ -24,32 +22,16 @@ class PollDetail extends Component {
     this.props.dispatch(Actions.vote(this.props.poll._id, this.state.vote));
     this.props.dispatch(Actions.voteRequest(this.props.poll._id, this.state.vote));
   }
-  chartData() {
-    const colors = ['#a6cee3', '#1f78b4', '#b2df8a', '#33a02c', '#fb9a99',
-      '#e31a1c', '#fdbf6f', '#ff7f00', '#cab2d6', '#6a3d9a'];
-
-    const colorsLength = colors.length;
-    const colorStart = Math.floor(Math.random() * colorsLength);
-
-    // create data object to pass to chartjs
-    return this.props.poll.options.map((obj, i) => (
+  render() {
+    const pieData = this.props.poll.options.map((obj) => (
       {
-        value: obj.votes,
-        label: obj.option,
-        color: colors[(colorStart + i) % colorsLength],
-        highlight: colorLuminance(colors[(colorStart + i) % colorsLength], 0.1)
+        x: obj.option,
+        y: obj.votes,
       }
     ));
-  }
-  render() {
-    const pieOptions = {
-      // animateScale: true,
-      animationEasing: 'easeInOutQuint',
-      responsive: true,
-      segmentShowStroke: false
-    };
+    const colorScale = ['#75C776', '#39B6C5', '#78CCC4',
+      '#62C3A4', '#64A8D1', '#8C95C8', '#3BAF74'];
     // TODO: move delete to dashboard or provide other conditional before showing
-    // TODO: work on noscript to get most up to date results from server
     return (
       <div>
         <div className="row p-b">
@@ -68,7 +50,13 @@ class PollDetail extends Component {
                       <input
                         type="radio" name="option" onChange={this.radioClick} value={obj._id}
                       />
-                      <span className="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                      <span
+                        style={{
+                          color: colorScale[i]
+                        }}
+                        className="glyphicon glyphicon-ok" aria-hidden="true"
+                      >
+                      </span>
                       {obj.option}
                     </label>
                   </div>
@@ -78,16 +66,32 @@ class PollDetail extends Component {
                 </Button>
               </form>
             </div>
+            <div>
+              <p>Current Results:</p>
+              <ul>
+              {this.props.poll.options.map((obj, i) =>
+                <li key={i} style={{ color: colorScale[i] }}>{obj.option}: {obj.votes}</li>
+              )}
+              </ul>
+            </div>
           </div>
           <div className="col-sm-6">
-            {canUseDOM ? <Pie data={this.chartData()} options={pieOptions} /> :
-              <noscript>
-                Poll results:<br />
-                {this.props.poll.options.map((obj, i) =>
-                  <div key={i}>{obj.option} - {obj.votes}<br /></div>
-                )}
-                <small>Javascript must be enabled to fully interact with this site!</small>
-              </noscript>}
+            <VictoryPie
+              data={pieData}
+              style={{
+                labels: {
+                  fill: 'white',
+                  opacity: data => (data.y === 0 ? 0 : 1)
+                },
+                data: {
+                  stroke: 'none'
+                }
+              }}
+              animate={{
+                duration: 1000
+              }}
+              colorScale={colorScale}
+            />
           </div>
           <LinkContainer to="/">
             <Button

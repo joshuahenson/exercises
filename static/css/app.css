@@ -17,21 +17,24 @@ a svg {
   vertical-align: middle;
 }
 
-input[type="radio"] {
+.radio input {
   display: none;
 }
 
-label input[type="radio"] ~ .glyphicon.glyphicon-ok {
+.radio input ~ .glyphicon.glyphicon-ok {
   visibility: hidden;
   margin-right: 5px;
 }
 
-label input[type="radio"]:checked ~ .glyphicon.glyphicon-ok {
-  color: #7AA3CC;
+.radio input:checked ~ .glyphicon.glyphicon-ok {
   visibility: visible;
   margin-right: 5px;
 }
 
 .p-b {
   padding-bottom: 20px;
+}
+
+ul {
+  list-style-type: square;
 }
