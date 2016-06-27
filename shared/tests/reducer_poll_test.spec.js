@@ -5,7 +5,7 @@ import * as ActionTypes from '../redux/constants/constants';
 
 describe('reducer tests', () => {
   it('action ADD_POLL is working', () => {
-    const stateBefore = { polls: ['foo'], poll: null };
+    const stateBefore = { polls: ['foo'], poll: null, showModal: false };
     const stateAfter = { polls: [{
       name: 'prank',
       title: 'first poll',
@@ -13,7 +13,7 @@ describe('reducer tests', () => {
       _id: null,
       cuid: null,
       slug: 'first-poll',
-    }, 'foo'], poll: null };
+    }, 'foo'], poll: null, showModal: false };
 
     const action = {
       type: ActionTypes.ADD_POLL,
@@ -40,6 +40,7 @@ describe('reducer tests', () => {
 
       }],
       poll: null,
+      showModal: false
     };
 
     const stateAfter = {
@@ -57,6 +58,7 @@ describe('reducer tests', () => {
         _id: null,
         slug: 'first-poll',
       },
+      showModal: false
     };
 
     const action = {
