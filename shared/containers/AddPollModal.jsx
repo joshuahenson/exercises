@@ -2,9 +2,9 @@ import React, { Component, PropTypes } from 'react';
 import Modal, { Header, Title, Body } from 'react-bootstrap/lib/Modal'; // syntax for production build
 import * as Actions from '../redux/actions/actions';
 import { connect } from 'react-redux';
-import Form from './Form';
+import AddPollForm from './AddPollForm';
 
-class AddPoll extends Component {
+class AddPollModal extends Component {
   constructor(props) {
     super(props);
     this.closeModal = this.closeModal.bind(this);
@@ -19,14 +19,14 @@ class AddPoll extends Component {
           <Title>Create a poll</Title>
         </Header>
         <Body>
-          <Form />
+          <AddPollForm />
         </Body>
       </Modal>
     );
   }
 }
 
-AddPoll.propTypes = {
+AddPollModal.propTypes = {
   showModal: PropTypes.bool,
   dispatch: PropTypes.func
 };
@@ -38,4 +38,4 @@ function mapStateToProps(store) {
 }
 
 // withRouter helps with temp issue with LinkContainer tracking active status
-export default connect(mapStateToProps)(AddPoll);
+export default connect(mapStateToProps)(AddPollModal);
