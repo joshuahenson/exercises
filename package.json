@@ -15,11 +15,6 @@
     "lint": "node_modules/.bin/eslint client server shared; exit 0",
     "lintfix": "node_modules/.bin/eslint client server shared --fix; exit 0"
   },
-  "pre-commit": [
-    "lint",
-    "test",
-    "test:server"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/joshuahenson/poll.git"

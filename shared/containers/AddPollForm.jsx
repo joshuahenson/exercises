@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+import { reduxForm } from 'redux-form';
 import * as Actions from '../redux/actions/actions';
-import { connect } from 'react-redux';
 
 class AddPollForm extends Component {
   constructor(props) {
@@ -9,36 +9,45 @@ class AddPollForm extends Component {
   }
   submit(e) {
     e.preventDefault();
-    // create dummy data to test
+    const { fields: { name, title, options } } = this.props;
     const poll = {
-      name: 'Xander', title: 'Best Parent', options: [{ option: 'Mom' }, { option: 'Dad' }]
+      name: name.value,
+      title: title.value,
+      options: options.value.split(',').map(optionI => ({ option: optionI.trim() }))
     };
     this.props.dispatch(Actions.addPollRequest(poll));
     this.props.dispatch(Actions.showModal(false));
   }
   render() {
+    const { fields: { name, title, options } } = this.props;
     return (
-      <form>
+      <form onSubmit={this.submit}>
         <div className="form-group">
           <label className="control-label">Name later replaced by login?</label>
-          <input type="text" className="form-control" />
+          <input type="text" className="form-control" {...name} />
         </div>
         <div className="form-group">
           <label className="control-label">Poll Title</label>
-          <input type="text" className="form-control" />
+          <input type="text" className="form-control" {...title} />
         </div>
         <div className="form-group">
           <label className="control-label">Poll Options (separated by comma)</label>
-          <input type="text" className="form-control" />
+          <textarea className="form-control" rows="5" {...options} />
         </div>
-        <button type="submit" className="btn btn-primary" onClick={this.submit}>Submit</button>
+        <button type="submit" className="btn btn-primary">Submit</button>
       </form>
     );
   }
 }
 
 AddPollForm.propTypes = {
-  dispatch: PropTypes.func
+  dispatch: PropTypes.func,
+  fields: PropTypes.object
 };
 
-export default connect()(AddPollForm);
+AddPollForm = reduxForm({ // eslint-disable-line
+  form: 'addPoll',
+  fields: ['name', 'title', 'options']
+})(AddPollForm);
+
+export default AddPollForm;
