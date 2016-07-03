@@ -24,15 +24,17 @@ class AddPollForm extends Component {
       <form onSubmit={this.submit}>
         <div className="form-group">
           <label className="control-label">Name later replaced by login?</label>
-          <input type="text" className="form-control" {...name} />
+          <input type="text" className="form-control" placeholder="Fiona Staples"{...name} />
         </div>
         <div className="form-group">
           <label className="control-label">Poll Title</label>
-          <input type="text" className="form-control" {...title} />
+          <input type="text" className="form-control" placeholder="Favorite Character"{...title} />
         </div>
         <div className="form-group">
           <label className="control-label">Poll Options (separated by comma)</label>
-          <textarea className="form-control" rows="5" {...options} />
+          <textarea
+            className="form-control" rows="5" placeholder="Alana, Marko, Hazel" {...options}
+          />
         </div>
         <button type="submit" className="btn btn-primary">Submit</button>
       </form>
