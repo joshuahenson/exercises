@@ -12,7 +12,7 @@ const validate = values => {
   }
   if (!values.options) {
     errors.options = 'Required';
-  } else if (!values.options.match(/.,./)) {
+  } else if (!/.,./.test(values.options)) {
     errors.options = 'At least two options separated by a comma are required';
   }
   return errors;
