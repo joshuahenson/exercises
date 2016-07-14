@@ -23,8 +23,7 @@ class AddPollForm extends Component {
     super(props);
     this.submit = this.submit.bind(this);
   }
-  submit(e) {
-    e.preventDefault();
+  submit() {
     const { fields: { name, title, options } } = this.props;
     const poll = {
       name: name.value,
@@ -35,9 +34,9 @@ class AddPollForm extends Component {
     this.props.dispatch(Actions.showModal(false));
   }
   render() {
-    const { fields: { name, title, options } } = this.props;
+    const { fields: { name, title, options }, handleSubmit } = this.props; // reduxForm props
     return (
-      <form onSubmit={this.submit}>
+      <form onSubmit={handleSubmit(this.submit)}>
         <div className={`form-group ${name.touched && name.error ? 'has-error' : ''}`}>
           <label className="control-label">Name later replaced by login?</label>
           <input type="text" className="form-control" placeholder="Fiona Staples"{...name} />
@@ -63,6 +62,7 @@ class AddPollForm extends Component {
 
 AddPollForm.propTypes = {
   dispatch: PropTypes.func,
+  handleSubmit: PropTypes.func,
   fields: PropTypes.object
 };
 
