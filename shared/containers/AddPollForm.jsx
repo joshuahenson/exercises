@@ -3,7 +3,6 @@ import { reduxForm } from 'redux-form';
 import * as Actions from '../redux/actions/actions';
 
 const validate = values => {
-  // TODO add comma regex to options
   const errors = {};
   if (!values.name) {
     errors.name = 'Required';
@@ -13,6 +12,8 @@ const validate = values => {
   }
   if (!values.options) {
     errors.options = 'Required';
+  } else if (!values.options.match(/.,./)) {
+    errors.options = 'At least two options separated by a comma are required';
   }
   return errors;
 };
