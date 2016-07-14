@@ -66,10 +66,8 @@ AddPollForm.propTypes = {
   fields: PropTypes.object
 };
 
-AddPollForm = reduxForm({ // eslint-disable-line
+export default reduxForm({
   form: 'addPoll',
   fields: ['name', 'title', 'options'],
   validate
 })(AddPollForm);
-
-export default AddPollForm;
