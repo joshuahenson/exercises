@@ -32,7 +32,6 @@
     "mongoose": "^4.3.7",
     "react": "^15.0.1",
     "react-bootstrap": "^0.29.4",
-    "react-chartjs": "^0.7.3",
     "react-dom": "^15.0.1",
     "react-helmet": "^2.3.1",
     "react-redux": "^4.1.2",
