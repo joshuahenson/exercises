@@ -1,6 +1,7 @@
 import * as ActionTypes from '../constants/constants';
 import Config from '../../../server/config';
 import fetch from 'isomorphic-fetch';
+import { push } from 'react-router-redux';
 
 const baseURL = typeof window === 'undefined' ? process.env.BASE_URL || (`http://localhost:${Config.port}`) : '';
 
@@ -13,6 +14,13 @@ export function addPoll(poll) {
     slug: poll.slug,
     cuid: poll.cuid,
     _id: poll._id,
+  };
+}
+
+export function addSelectedPoll(poll) {
+  return {
+    type: ActionTypes.ADD_SELECTED_POLL,
+    poll,
   };
 }
 
@@ -30,14 +38,10 @@ export function addPollRequest(poll) {
       headers: new Headers({
         'Content-Type': 'application/json',
       }),
-    }).then((res) => res.json()).then(res => dispatch(addPoll(res.poll)));
-  };
-}
-
-export function addSelectedPoll(poll) {
-  return {
-    type: ActionTypes.ADD_SELECTED_POLL,
-    poll,
+    }).then((res) => res.json()).then(res => {
+      dispatch(addPoll(res.poll));
+      dispatch(push(`/poll/${res.poll.slug}-${res.poll.cuid}`));
+    });
   };
 }
 

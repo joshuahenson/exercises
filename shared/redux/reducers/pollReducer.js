@@ -22,6 +22,16 @@ const pollReducer = (state = null, action) => {
     case ActionTypes.ADD_SELECTED_POLL :
       return action.poll;
 
+    case ActionTypes.ADD_POLL :
+      return {
+        name: action.name,
+        title: action.title,
+        options: action.options,
+        slug: action.slug,
+        cuid: action.cuid,
+        _id: action._id,
+      };
+
     case ActionTypes.VOTE:
       return Object.assign({}, state, {
         options: state.options.map(t =>
