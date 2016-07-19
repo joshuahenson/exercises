@@ -23,7 +23,9 @@ import { configureStore } from '../shared/redux/store/configureStore';
 import { Provider } from 'react-redux';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import { match, RouterContext } from 'react-router';
+import { createMemoryHistory, match, RouterContext } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
+
 import Helmet from 'react-helmet';
 
 // Import required modules
@@ -89,7 +91,10 @@ const renderError = err => {
 
 // Server Side Rendering based on routes matched by React-router.
 app.use((req, res, next) => {
-  match({ routes, location: req.url }, (err, redirectLocation, renderProps) => {
+  const memoryHistory = createMemoryHistory(req.url);
+  const store = configureStore(memoryHistory);
+  const history = syncHistoryWithStore(memoryHistory, store);
+  match({ history, routes, location: req.url }, (err, redirectLocation, renderProps) => {
     if (err) {
       return res.status(500).end(renderError(err));
     }
@@ -102,9 +107,9 @@ app.use((req, res, next) => {
       return next();
     }
 
-    const initialState = { polls: [], poll: {} };
-
-    const store = configureStore(initialState);
+    // const initialState = { polls: [], poll: {} };
+    //
+    // const store = configureStore(initialState);
 
     return fetchComponentData(store, renderProps.components, renderProps.params)
       .then(() => {

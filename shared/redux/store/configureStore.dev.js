@@ -1,19 +1,21 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import DevTools from '../../containers/DevTools/DevTools';
+// TODO - UPDATE PROD
+import { routerMiddleware } from 'react-router-redux';
 import rootReducer from '../reducers/index';
 
-export function configureStore(initialState = {}) {
+export function configureStore(history, initialState = {}) {
   let enhancerClient;
   if (process.env.CLIENT) {
     enhancerClient = compose(
-      applyMiddleware(thunk),
+      applyMiddleware(thunk, routerMiddleware(history)),
       window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument()
     );
   }
 
 
-  const enhancerServer = applyMiddleware(thunk);
+  const enhancerServer = applyMiddleware(thunk, routerMiddleware(history));
 
   let store;
 
