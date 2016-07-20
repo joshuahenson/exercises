@@ -21,13 +21,23 @@ a svg {
   display: none;
 }
 
-.radio input ~ .glyphicon.glyphicon-ok {
-  visibility: hidden;
+.radio input ~ .glyphicon.glyphicon-check {
+  display: none;
   margin-right: 5px;
 }
 
-.radio input:checked ~ .glyphicon.glyphicon-ok {
-  visibility: visible;
+.radio input:checked ~ .glyphicon.glyphicon-check {
+  display: inline;
+  margin-right: 5px;
+}
+
+.radio input ~ .glyphicon.glyphicon-unchecked {
+  display: inline;
+  margin-right: 5px;
+}
+
+.radio input:checked ~ .glyphicon.glyphicon-unchecked {
+  display: none;
   margin-right: 5px;
 }
 

@@ -32,6 +32,8 @@ class PollDetail extends Component {
     const colorScale = ['#75C776', '#39B6C5', '#78CCC4',
       '#62C3A4', '#64A8D1', '#8C95C8', '#3BAF74'];
     // TODO: move delete to dashboard or provide other conditional before showing
+    // TODO: 8th item will put two colors next to one another
+    // TODO: 8th item will not have color on checkboxes/current results
     return (
       <div>
         <div className="row p-b">
@@ -50,13 +52,13 @@ class PollDetail extends Component {
                       <input
                         type="radio" name="option" onChange={this.radioClick} value={obj._id}
                       />
+                      <span className="glyphicon glyphicon-unchecked" aria-hidden="true" />
                       <span
                         style={{
                           color: colorScale[i]
                         }}
-                        className="glyphicon glyphicon-ok" aria-hidden="true"
-                      >
-                      </span>
+                        className="glyphicon glyphicon-check" aria-hidden="true"
+                      />
                       {obj.option}
                     </label>
                   </div>
