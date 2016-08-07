@@ -4,13 +4,15 @@ import { routerReducer as routing } from 'react-router-redux';
 import poll from './pollReducer';
 import polls from './pollsReducer';
 import showModal from './modalReducer';
+import auth from './authReducer';
 
 const rootReducer = combineReducers({
   polls,
   poll,
   showModal,
   form: formReducer,
-  routing
+  routing,
+  auth
 });
 
 export default rootReducer;

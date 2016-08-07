@@ -2,6 +2,8 @@ import Express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import path from 'path';
+import cookieParser from 'cookie-parser';
+import session from 'express-session';
 
 // Webpack Requirements
 import webpack from 'webpack';
@@ -11,6 +13,14 @@ import webpackHotMiddleware from 'webpack-hot-middleware';
 
 // Initialize the Express App
 const app = new Express();
+
+app.use(cookieParser());
+app.use(session({
+  secret: 'secret',
+  resave: true,
+  saveUninitialized: true,
+  cookie: { httpOnly: true }
+}));
 
 if (process.env.NODE_ENV !== 'production') {
   const compiler = webpack(config);
@@ -31,9 +41,12 @@ import Helmet from 'react-helmet';
 // Import required modules
 import routes from '../shared/routes';
 import { fetchComponentData } from './util/fetchData';
+import { fetchIsAuthenticated } from './util/fetchAuth';
 import polls from './routes/poll.routes';
+import auth from './routes/auth.routes';
 import dummyData from './dummyData';
 import serverConfig from './config';
+import passport from './passport';
 
 // MongoDB Connection
 mongoose.connect(serverConfig.mongoURL, (error) => {
@@ -50,7 +63,14 @@ mongoose.connect(serverConfig.mongoURL, (error) => {
 app.use(bodyParser.json({ limit: '20mb' }));
 app.use(bodyParser.urlencoded({ limit: '20mb', extended: false }));
 app.use(Express.static(path.resolve(__dirname, '../static')));
+app.use(passport.initialize());
+app.use((req, res, next) => {
+  console.log('token');
+  console.log(req.session.token);
+  next();
+});
 app.use('/api', polls);
+app.use('/auth', auth);
 
 // Render Initial HTML
 const renderFullPage = (html, initialState) => {
