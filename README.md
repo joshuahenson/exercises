@@ -1,2 +1,2 @@
-# Tutorial Files
-Copies of my files while working through various tutorials
+# Exercise Files
+Copies of my files while working through various exercises
