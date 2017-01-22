@@ -13,3 +13,25 @@ function debounce(func, wait = 20, immediate = true) {
     if (callNow) func.apply(context, args);
   };
 }
+
+const slidingImages = document.querySelectorAll('.slide-in')
+
+function slideIn(e) {
+  slidingImages.forEach((slidingImage) => {
+    // halfway through image
+    const slideInAt = window.scrollY + window.innerHeight - (slidingImage.height / 2);
+
+    // bottom of image
+    const imageBottom = slidingImage.offsetTop + slidingImage.height;
+
+    const isHalfShown = slideInAt > slidingImage.offsetTop;
+    const isNotScrolledPast = window.scrollY < imageBottom;
+    if (isHalfShown && isNotScrolledPast) {
+      slidingImage.classList.add('active');
+    } else {
+      slidingImage.classList.remove('active');
+    }
+  })
+}
+
+window.addEventListener('scroll', debounce(slideIn));
