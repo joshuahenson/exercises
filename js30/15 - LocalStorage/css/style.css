@@ -62,12 +62,12 @@ h2 {
 }
 
 .plates input + label:before {
-  content: '⬜️';
+  content: '\2610';
   margin-right: 10px;
 }
 
 .plates input:checked + label:before {
-  content: '🌮';
+  content: '\2611';
 }
 
 .add-items {
