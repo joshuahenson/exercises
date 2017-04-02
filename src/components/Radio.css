@@ -1,5 +1,6 @@
 .radio {
   margin: 0.5rem;
+  user-select: none;
 }
 
 .radio .radio-label {
