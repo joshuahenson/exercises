@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import placeholder from './placeholderReducer';
+import sapForm from './sapFormReducer';
 
 const rootReducer = combineReducers({
-  placeholder
+  sapForm
 });
 
 export default rootReducer;

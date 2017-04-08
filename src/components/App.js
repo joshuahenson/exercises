@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 import Button from './Button';
 import Checkbox from './Checkbox';
 import FilteredInput from './FilteredInput';
 import Radio from './Radio';
+import { pickSoapType } from '../actions';
 
 // const dummyData = ['Avocado Oil', 'Coconut Oil', 'Olive Oil'];
 const dummyData = () => {
@@ -13,15 +15,24 @@ const dummyData = () => {
   return data;
 };
 
-const App = () => {
+const App = ({ soapType, pickSoapType }) => {
   return (
-    <div>
+    <form>
+      <fieldset>
+        <legend>Soap Type</legend>
+        <Radio
+          name="soap_type" id="NaOH_soap_type" label="Bar (NaOH)" value="naoh"
+          checked={soapType === 'naoh'}
+          clickHandler={() => pickSoapType('naoh')}
+        />
+        <Radio
+          name="soap_type" id="KOH_soap_type" label="Liquid (KOH)" value="koh"
+          checked={soapType === 'koh'}
+          clickHandler={() => pickSoapType('koh')}
+        />
+      </fieldset>
       <div>
-        <Radio name="soap_type" id="type_radio_1" label="Bar (NaOH)" />
-        <Radio name="soap_type" id="type_radio_2" label="Liquid (KOH)" />
-      </div>
-      <div>
-        <Checkbox name="percent-checkbox" id="percent-checkbox" label="Add oils by percentage?" />
+        <Checkbox name="percent_checkbox" id="percent_checkbox" label="Add oils by percentage?" />
       </div>
       <div>
         <Button>Regular</Button>
@@ -33,8 +44,17 @@ const App = () => {
       <div >
         <FilteredInput data={dummyData()} />
       </div>
-    </div>
+    </form>
   );
 };
 
-export default App;
+App.propTypes = {
+  soapType: PropTypes.string,
+  pickSoapType: PropTypes.func
+};
+
+function mapStateToProps(state) {
+  return { soapType: state.sapForm.soapType };
+}
+
+export default connect(mapStateToProps, { pickSoapType })(App);
