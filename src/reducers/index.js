@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import sapForm from './sapFormReducer';
+import soapType from './soapTypeReducer';
 
 const rootReducer = combineReducers({
-  sapForm
+  soapType
 });
 
 export default rootReducer;

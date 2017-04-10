@@ -54,7 +54,7 @@ App.propTypes = {
 };
 
 function mapStateToProps(state) {
-  return { soapType: state.sapForm.soapType };
+  return { soapType: state.soapType };
 }
 
 export default connect(mapStateToProps, { pickSoapType })(App);
