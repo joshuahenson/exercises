@@ -15,7 +15,7 @@ class FilteredInput extends Component {
     this.setState({ value: '' });
   }
   render() {
-    const { data } = this.props;
+    const { data, clickHandler } = this.props;
     const { value } = this.state;
     return (
       <div>
@@ -30,7 +30,7 @@ class FilteredInput extends Component {
           {
             data.filter(datum => datum.toLowerCase().indexOf(value.toLowerCase()) >= 0)
             .map(filtered => (
-              <li key={filtered} onClick={() => console.log(filtered)}>
+              <li key={filtered} onClick={() => clickHandler(filtered)}>
                 <div className="list-item">{filtered}</div>
                 <div className="add">+</div>
               </li>
@@ -43,7 +43,8 @@ class FilteredInput extends Component {
 }
 
 FilteredInput.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.string)
+  data: PropTypes.arrayOf(PropTypes.string),
+  clickHandler: PropTypes.func
 };
 
 export default FilteredInput;

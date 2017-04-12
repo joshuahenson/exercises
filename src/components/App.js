@@ -4,7 +4,7 @@ import Button from './Button';
 import Checkbox from './Checkbox';
 import FilteredInput from './FilteredInput';
 import Radio from './Radio';
-import { pickSoapType } from '../actions';
+import { pickSoapType, addOil } from '../actions';
 
 // const dummyData = ['Avocado Oil', 'Coconut Oil', 'Olive Oil'];
 const dummyData = () => {
@@ -15,7 +15,7 @@ const dummyData = () => {
   return data;
 };
 
-const App = ({ soapType, pickSoapType }) => {
+const App = ({ soapType, pickSoapType, addOil }) => {
   return (
     <form>
       <fieldset>
@@ -42,7 +42,7 @@ const App = ({ soapType, pickSoapType }) => {
         <Button buttonClass="primary-outline round">+</Button>
       </div>
       <div >
-        <FilteredInput data={dummyData()} />
+        <FilteredInput data={dummyData()} clickHandler={addOil} />
       </div>
     </form>
   );
@@ -50,11 +50,12 @@ const App = ({ soapType, pickSoapType }) => {
 
 App.propTypes = {
   soapType: PropTypes.string,
-  pickSoapType: PropTypes.func
+  pickSoapType: PropTypes.func,
+  addOil: PropTypes.func
 };
 
 function mapStateToProps(state) {
   return { soapType: state.soapType };
 }
 
-export default connect(mapStateToProps, { pickSoapType })(App);
+export default connect(mapStateToProps, { pickSoapType, addOil })(App);

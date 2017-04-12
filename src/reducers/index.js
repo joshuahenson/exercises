@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import soapType from './soapTypeReducer';
+import oils from './oilsReducer';
 
 const rootReducer = combineReducers({
-  soapType
+  soapType,
+  oils
 });
 
 export default rootReducer;
