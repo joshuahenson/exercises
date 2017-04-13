@@ -19,3 +19,13 @@ body {
 ul {
   list-style: none;
 }
+
+fieldset {
+  border: 1px solid #E0EFF1;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+legend {
+  font-size: 0.9rem;
+}
