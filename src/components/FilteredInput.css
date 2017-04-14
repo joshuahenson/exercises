@@ -79,21 +79,13 @@ button.clear-input {
   border: none;
   position: relative;
   left: -1.7em;
-}
-
-button.clear-input {
-  line-height: 1.5;
-  height: 2.25em;
-  padding: 0.375em;
-  border: none;
-  position: relative;
-  left: -1.7em;
   color: #b4b4b4;
+  cursor: default;
+  transition: color 0.25s;
 }
 
 button.clear-input:hover {
   color: red;
-  transition: color 0.5s;
 }
 
 button.clear-input:active {
