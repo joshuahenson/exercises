@@ -4,6 +4,7 @@ import Button from './Button';
 import Checkbox from './Checkbox';
 import FilteredInput from './FilteredInput';
 import Radio from './Radio';
+import Oils from './Oils';
 import { pickSoapType, addOil } from '../actions';
 
 // const dummyData = ['Avocado Oil', 'Coconut Oil', 'Olive Oil'];
@@ -43,6 +44,7 @@ const App = ({ soapType, pickSoapType, addOil }) => {
       </div>
       <div >
         <FilteredInput data={dummyData()} clickHandler={addOil} />
+        <Oils />
       </div>
     </form>
   );
