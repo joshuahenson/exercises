@@ -23,7 +23,7 @@ class FilteredInput extends Component {
           className="filtered-input" type="text" value={value}
           onChange={this.filterData} placeholder="Search..."
         />
-        <button className="clear-input" onClick={this.clearInput}>
+        <button className="clear-input" type="button" onClick={this.clearInput}>
           X
         </button>
         <ul className="filtered-list">
