@@ -18,7 +18,7 @@ class FilteredInput extends Component {
     const { data, clickHandler } = this.props;
     const { value } = this.state;
     return (
-      <div>
+      <div className="filtered-container">
         <input
           className="filtered-input" type="text" value={value}
           onChange={this.filterData} placeholder="Search..."

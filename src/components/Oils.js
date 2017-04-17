@@ -1,9 +1,10 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
+import './Oils.css';
 
 const Oils = ({ oils }) => {
   return (
-    <ul>
+    <ul className="oils">
       {
         oils.map((oil) => {
           return (
