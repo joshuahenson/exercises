@@ -5,7 +5,8 @@ import Checkbox from './Checkbox';
 import FilteredInput from './FilteredInput';
 import Radio from './Radio';
 import Oils from './Oils';
-import { pickSoapType, addOil } from '../actions';
+import InputUnit from './InputUnit';
+import { pickSoapType, addOil, pickUnit } from '../actions';
 
 // const dummyData = ['Avocado Oil', 'Coconut Oil', 'Olive Oil'];
 const dummyData = () => {
@@ -16,7 +17,7 @@ const dummyData = () => {
   return data;
 };
 
-const App = ({ soapType, pickSoapType, addOil }) => {
+const App = ({ soapType, pickSoapType, addOil, unit, pickUnit }) => {
   return (
     <form>
       <fieldset>
@@ -30,6 +31,30 @@ const App = ({ soapType, pickSoapType, addOil }) => {
           name="soap_type" id="KOH_soap_type" label="Liquid (KOH)" value="koh"
           checked={soapType === 'koh'}
           clickHandler={() => pickSoapType('koh')}
+        />
+      </fieldset>
+      <fieldset>
+        <legend>Oil Weight</legend>
+        <InputUnit id="oil_weight" label="Total Wt." min="0" unit={unit} />
+        <Radio
+          name="weight_units" id="oz_unit" label="Ounces (oz)" value="oz"
+          checked={unit === 'oz'}
+          clickHandler={() => pickUnit('oz')}
+        />
+        <Radio
+          name="weight_units" id="lb_unit" label="Pounds (lbs)" value="lbs"
+          checked={unit === 'lbs'}
+          clickHandler={() => pickUnit('lbs')}
+        />
+        <Radio
+          name="weight_units" id="g_unit" label="Grams (g)" value="g"
+          checked={unit === 'g'}
+          clickHandler={() => pickUnit('g')}
+        />
+        <Radio
+          name="weight_units" id="kg_unit" label="Kilograms (kg)" value="kg"
+          checked={unit === 'kg'}
+          clickHandler={() => pickUnit('kg')}
         />
       </fieldset>
       <div>
@@ -53,11 +78,16 @@ const App = ({ soapType, pickSoapType, addOil }) => {
 App.propTypes = {
   soapType: PropTypes.string,
   pickSoapType: PropTypes.func,
-  addOil: PropTypes.func
+  addOil: PropTypes.func,
+  unit: PropTypes.string,
+  pickUnit: PropTypes.func
 };
 
-function mapStateToProps(state) {
-  return { soapType: state.soapType };
-}
+const mapStateToProps = (state) => {
+  return {
+    soapType: state.soapType,
+    unit: state.unit
+  };
+};
 
-export default connect(mapStateToProps, { pickSoapType, addOil })(App);
+export default connect(mapStateToProps, { pickSoapType, addOil, pickUnit })(App);

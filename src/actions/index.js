@@ -11,3 +11,10 @@ export function addOil(oil) {
     oil
   };
 }
+
+export function pickUnit(unit) {
+  return {
+    type: 'PICK_UNIT',
+    unit
+  };
+}
