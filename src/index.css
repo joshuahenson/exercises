@@ -33,9 +33,9 @@ legend {
 input {
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 2.25em;
   height: 2.25em;
-  padding: 0.375em 0.625em;
+  padding-left: 0.625em;
   border: 1px solid #b4b4b4;
 }
 
