@@ -6,7 +6,7 @@ import FilteredInput from './FilteredInput';
 import Radio from './Radio';
 import Oils from './Oils';
 import InputUnit from './InputUnit';
-import { pickSoapType, addOil, pickUnit } from '../actions';
+import { pickSoapType, addOil, pickUnit, setOilWeight } from '../actions';
 
 // const dummyData = ['Avocado Oil', 'Coconut Oil', 'Olive Oil'];
 const dummyData = () => {
@@ -17,7 +17,7 @@ const dummyData = () => {
   return data;
 };
 
-const App = ({ soapType, pickSoapType, addOil, unit, pickUnit }) => {
+const App = ({ soapType, pickSoapType, addOil, unit, pickUnit, oilWeight, setOilWeight }) => {
   return (
     <form>
       <fieldset>
@@ -33,9 +33,13 @@ const App = ({ soapType, pickSoapType, addOil, unit, pickUnit }) => {
           clickHandler={() => pickSoapType('koh')}
         />
       </fieldset>
+
       <fieldset>
         <legend>Oil Weight</legend>
-        <InputUnit id="oil_weight" label="Total Wt." min="0" unit={unit} />
+        <InputUnit
+          id="oil_weight" label="Total Wt." min="0" unit={unit} value={oilWeight}
+          onChange={e => setOilWeight(e.target.value)}
+        />
         <Radio
           name="weight_units" id="oz_unit" label="Ounces (oz)" value="oz"
           checked={unit === 'oz'}
@@ -57,6 +61,7 @@ const App = ({ soapType, pickSoapType, addOil, unit, pickUnit }) => {
           clickHandler={() => pickUnit('kg')}
         />
       </fieldset>
+
       <div>
         <Checkbox name="percent_checkbox" id="percent_checkbox" label="Add oils by percentage?" />
       </div>
@@ -80,14 +85,17 @@ App.propTypes = {
   pickSoapType: PropTypes.func,
   addOil: PropTypes.func,
   unit: PropTypes.string,
-  pickUnit: PropTypes.func
+  pickUnit: PropTypes.func,
+  oilWeight: PropTypes.string,
+  setOilWeight: PropTypes.func
 };
 
 const mapStateToProps = (state) => {
   return {
     soapType: state.soapType,
-    unit: state.unit
+    unit: state.unit,
+    oilWeight: state.oilWeight
   };
 };
 
-export default connect(mapStateToProps, { pickSoapType, addOil, pickUnit })(App);
+export default connect(mapStateToProps, { pickSoapType, addOil, pickUnit, setOilWeight })(App);

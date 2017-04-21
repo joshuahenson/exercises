@@ -18,3 +18,10 @@ export function pickUnit(unit) {
     unit
   };
 }
+
+export function setOilWeight(weight) {
+  return {
+    type: 'SET_OIL_WEIGHT',
+    weight
+  };
+}
