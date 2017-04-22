@@ -32,3 +32,10 @@ export function setWaterRatio(ratio) {
     ratio
   };
 }
+
+export function setSuperfatting(superfat) {
+  return {
+    type: 'SET_SUPERFATTING',
+    superfat
+  };
+}
