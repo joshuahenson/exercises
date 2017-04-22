@@ -6,7 +6,9 @@ import FilteredInput from './FilteredInput';
 import Radio from './Radio';
 import Oils from './Oils';
 import InputUnit from './InputUnit';
-import { pickSoapType, addOil, pickUnit, setOilWeight, setWaterRatio, setSuperfatting } from '../actions';
+import {
+  pickSoapType, addOil, pickUnit, setOilWeight, setWaterRatio, setSuperfatting, setByPercent
+} from '../actions';
 
 // const dummyData = ['Avocado Oil', 'Coconut Oil', 'Olive Oil'];
 const dummyData = () => {
@@ -20,7 +22,7 @@ const dummyData = () => {
 const App = (
   {
     soapType, pickSoapType, addOil, unit, pickUnit, oilWeight, setOilWeight,
-    waterRatio, setWaterRatio, superfatting, setSuperfatting
+    waterRatio, setWaterRatio, superfatting, setSuperfatting, byPercent, setByPercent
   }) => {
   return (
     <form>
@@ -83,7 +85,11 @@ const App = (
       </fieldset>
 
       <div>
-        <Checkbox name="percent_checkbox" id="percent_checkbox" label="Add oils by percentage?" />
+        <Checkbox
+          name="percent_checkbox" id="percent_checkbox" label="Add oils by percentage?"
+          checked={byPercent}
+          clickHandler={() => setByPercent()}
+        />
       </div>
       <div>
         <Button>Regular</Button>
@@ -111,7 +117,9 @@ App.propTypes = {
   waterRatio: PropTypes.string,
   setWaterRatio: PropTypes.func,
   superfatting: PropTypes.string,
-  setSuperfatting: PropTypes.func
+  setSuperfatting: PropTypes.func,
+  byPercent: PropTypes.bool,
+  setByPercent: PropTypes.func
 };
 
 const mapStateToProps = (state) => {
@@ -120,11 +128,12 @@ const mapStateToProps = (state) => {
     unit: state.unit,
     oilWeight: state.oilWeight,
     waterRatio: state.waterRatio,
-    superfatting: state.superfatting
+    superfatting: state.superfatting,
+    byPercent: state.byPercent
   };
 };
 
 export default connect(
   mapStateToProps,
-  { pickSoapType, addOil, pickUnit, setOilWeight, setWaterRatio, setSuperfatting }
+  { pickSoapType, addOil, pickUnit, setOilWeight, setWaterRatio, setSuperfatting, setByPercent }
 )(App);

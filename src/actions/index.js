@@ -39,3 +39,9 @@ export function setSuperfatting(superfat) {
     superfat
   };
 }
+
+export function setByPercent() {
+  return {
+    type: 'OIL_BY_PERCENT'
+  };
+}
