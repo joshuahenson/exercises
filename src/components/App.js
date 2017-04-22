@@ -6,7 +6,7 @@ import FilteredInput from './FilteredInput';
 import Radio from './Radio';
 import Oils from './Oils';
 import InputUnit from './InputUnit';
-import { pickSoapType, addOil, pickUnit, setOilWeight } from '../actions';
+import { pickSoapType, addOil, pickUnit, setOilWeight, setWaterRatio } from '../actions';
 
 // const dummyData = ['Avocado Oil', 'Coconut Oil', 'Olive Oil'];
 const dummyData = () => {
@@ -17,7 +17,7 @@ const dummyData = () => {
   return data;
 };
 
-const App = ({ soapType, pickSoapType, addOil, unit, pickUnit, oilWeight, setOilWeight }) => {
+const App = ({ soapType, pickSoapType, addOil, unit, pickUnit, oilWeight, setOilWeight, waterRatio, setWaterRatio }) => {
   return (
     <form>
       <fieldset>
@@ -62,6 +62,14 @@ const App = ({ soapType, pickSoapType, addOil, unit, pickUnit, oilWeight, setOil
         />
       </fieldset>
 
+      <fieldset>
+        <legend>Water Ratio</legend>
+        <InputUnit
+          id="water_ratio" min="0" max="100" unit="%" value={waterRatio}
+          onChange={e => setWaterRatio(e.target.value)}
+        />
+      </fieldset>
+
       <div>
         <Checkbox name="percent_checkbox" id="percent_checkbox" label="Add oils by percentage?" />
       </div>
@@ -87,15 +95,18 @@ App.propTypes = {
   unit: PropTypes.string,
   pickUnit: PropTypes.func,
   oilWeight: PropTypes.string,
-  setOilWeight: PropTypes.func
+  setOilWeight: PropTypes.func,
+  waterRatio: PropTypes.string,
+  setWaterRatio: PropTypes.func
 };
 
 const mapStateToProps = (state) => {
   return {
     soapType: state.soapType,
     unit: state.unit,
-    oilWeight: state.oilWeight
+    oilWeight: state.oilWeight,
+    waterRatio: state.waterRatio
   };
 };
 
-export default connect(mapStateToProps, { pickSoapType, addOil, pickUnit, setOilWeight })(App);
+export default connect(mapStateToProps, { pickSoapType, addOil, pickUnit, setOilWeight, setWaterRatio })(App);
