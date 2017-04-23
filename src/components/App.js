@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
+import sap from '../data/sap.json';
 import Button from './Button';
 import Checkbox from './Checkbox';
 import FilteredInput from './FilteredInput';
@@ -9,15 +10,6 @@ import InputUnit from './InputUnit';
 import {
   pickSoapType, addOil, pickUnit, setOilWeight, setWaterRatio, setSuperfatting, setByPercent
 } from '../actions';
-
-// const dummyData = ['Avocado Oil', 'Coconut Oil', 'Olive Oil'];
-const dummyData = () => {
-  const data = ['Avocado Oil', 'Coconut Oil', 'Olive Oil', 'dsfdlskajflkjasdfljsajhkjhkjhkljhkjhkjhkljhkljhkljhkjhdlkfjsldkjf'];
-  for (let i = 65; i < 80; i++) {
-    data.push(String.fromCharCode(i));
-  }
-  return data;
-};
 
 const App = (
   {
@@ -99,7 +91,7 @@ const App = (
         <Button buttonClass="primary-outline round">+</Button>
       </div>
       <div >
-        <FilteredInput data={dummyData()} clickHandler={addOil} />
+        <FilteredInput data={sap} clickHandler={addOil} />
         <Oils />
       </div>
     </form>

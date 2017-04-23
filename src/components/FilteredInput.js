@@ -28,10 +28,10 @@ class FilteredInput extends Component {
         </button>
         <ul className="filtered-list">
           {
-            data.filter(datum => datum.toLowerCase().indexOf(value.toLowerCase()) >= 0)
+            data.filter(datum => datum.oil.toLowerCase().indexOf(value.toLowerCase()) >= 0)
             .map(filtered => (
-              <li key={filtered} onClick={() => clickHandler(filtered)}>
-                <div className="list-item">{filtered}</div>
+              <li key={filtered.oilId} onClick={() => clickHandler(filtered)}>
+                <div className="list-item">{filtered.oil}</div>
                 <div className="add">+</div>
               </li>
             ))
@@ -43,7 +43,7 @@ class FilteredInput extends Component {
 }
 
 FilteredInput.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.string),
+  data: PropTypes.arrayOf(PropTypes.object),
   clickHandler: PropTypes.func
 };
 
