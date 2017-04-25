@@ -7,9 +7,9 @@ import './InputUnit.css';
 const InputUnit = ({ name, id, label, unit, min, max, onChange, value }) => {
   return (
     <div className="input-unit">
-      <label htmlFor={id}>{label}</label>
       <input id={id} name={name} type="number" min={min} max={max} onChange={onChange} value={value} />
       <div className="unit">{unit}</div>
+      <label htmlFor={id}>{label}</label>
     </div>
   );
 };
