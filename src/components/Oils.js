@@ -12,11 +12,16 @@ const Oils = ({ oils, unit, byPercent, setOilValue }) => {
         oils.map((oil) => {
           return (
             <li key={oil.oil}>
-              <InputUnit
-                id={`${oil.oilId}_oil_weight`} label={oil.oil} min="0" value={oil.value}
-                unit={byPercent ? '%' : unit}
-                onChange={e => setOilValue(e.target.value, oil.oilId)}
-              />
+              <div className="i-b">
+                <InputUnit
+                  id={`${oil.oilId}_oil_weight`} label={oil.oil} min="0" value={oil.value}
+                  unit={byPercent ? '%' : unit}
+                  onChange={e => setOilValue(e.target.value, oil.oilId)}
+                />
+              </div>
+              <button className="remove" type="button" onClick={() => console.log('clear')}>
+                X
+              </button>
             </li>
           );
         })

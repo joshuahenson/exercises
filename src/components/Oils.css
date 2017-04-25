@@ -4,80 +4,43 @@
 .oils {
   display: inline-block;
   vertical-align: top;
-  max-height: 400px;
   width: 400px;
-  overflow-x: hidden;
-  overflow-y: auto;
   padding: 0;
   margin: 2.25em 0 0 0;
-  border: 1px solid #b4b4b4;
 }
 
 .oils li {
-  /*position: relative;*/
-  padding-left: 5px;
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
   user-select: none;
-  cursor: pointer;
 }
 
-.oils li:hover {
-  background-color: #FFEAEA;
-}
-
-.oils .list-item {
-  margin-right: 25px;
-  overflow: hidden;
-}
-
-.oils .add {
+.oils .remove {
+  text-align: right;
   position: absolute;
-  top: 0;
-  right: 8px;
-  color: #7DB4B5;
+  top: 3px;
+  right: 0;
+  color: red;
   opacity: 0;
+  border: none;
 }
 
-.oils li:hover .add {
+.oils li:hover .remove {
   opacity: 1;
 }
 
-.oils li:not(:last-child) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+button.remove {
+  transition: color 0.25s, background-color 0.5s;
 }
 
-.oils::-webkit-scrollbar {
-    width: 1em;
-}
-
-.oils::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-}
-
-.oils::-webkit-scrollbar-track:active {
-    -webkit-box-shadow: inset 0 0 6px #7DB4B5;
-}
-
-.oils::-webkit-scrollbar-thumb {
-  background-color: rgba(0,0,0,0.1);
-}
-
-button.clear-input {
-  line-height: 1.5;
-  height: 2.25em;
-  padding: 0.375em;
-  border: none;
-  position: relative;
-  left: -1.7em;
-  color: #b4b4b4;
-  cursor: default;
-  transition: color 0.25s;
-}
-
-button.clear-input:hover {
-  color: red;
-}
-
-button.clear-input:active {
+button.remove:active {
   box-shadow: none;
   text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+}
+
+button.remove:hover {
+  color: white;
+  background-color: red;
 }

@@ -43,3 +43,7 @@ input:focus  {
   outline: none;
   border-color: #7DB4B5;
 }
+
+.i-b {
+  display: inline-block;
+}
