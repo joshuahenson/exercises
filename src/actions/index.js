@@ -45,3 +45,11 @@ export function setByPercent() {
     type: 'OIL_BY_PERCENT'
   };
 }
+
+export function setOilValue(value, oilId) {
+  return {
+    type: 'SET_OIL_VALUE',
+    value,
+    oilId
+  };
+}

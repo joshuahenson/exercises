@@ -36,7 +36,7 @@ const App = (
       <fieldset>
         <legend>Oil Weight</legend>
         <InputUnit
-          id="oil_weight" label="Total Wt." min="0" unit={unit} value={oilWeight}
+          id="oil_weight" min="0" unit={unit} value={oilWeight}
           onChange={e => setOilWeight(e.target.value)}
         />
         <Radio
