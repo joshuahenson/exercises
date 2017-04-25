@@ -12,6 +12,13 @@ export function addOil(oil) {
   };
 }
 
+export function removeOil(oilId) {
+  return {
+    type: 'REMOVE_OIL',
+    oilId
+  };
+}
+
 export function pickUnit(unit) {
   return {
     type: 'PICK_UNIT',

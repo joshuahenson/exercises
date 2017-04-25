@@ -78,6 +78,7 @@ button.clear-input {
   color: #b4b4b4;
   cursor: default;
   transition: color 0.25s;
+  background-color: transparent;
 }
 
 button.clear-input:hover {

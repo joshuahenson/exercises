@@ -12,6 +12,8 @@ export default(state = [], action) => {
         return state;
       }
       return [...state, { ...action.oil, value: '0' }];
+    case 'REMOVE_OIL':
+      return state.filter(oil => oil.oilId !== action.oilId);
     case 'SET_OIL_VALUE':
       return state.map(oil => updateValue(oil, action));
     default:

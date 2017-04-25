@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import InputUnit from './InputUnit';
-import { setOilValue } from '../actions';
+import { setOilValue, removeOil } from '../actions';
 import './Oils.css';
 
-const Oils = ({ oils, unit, byPercent, setOilValue }) => {
+const Oils = ({ oils, unit, byPercent, setOilValue, removeOil }) => {
   return (
     <ul className="oils">
       {
@@ -19,7 +19,7 @@ const Oils = ({ oils, unit, byPercent, setOilValue }) => {
                   onChange={e => setOilValue(e.target.value, oil.oilId)}
                 />
               </div>
-              <button className="remove" type="button" onClick={() => console.log('clear')}>
+              <button className="remove" type="button" onClick={() => removeOil(oil.oilId)}>
                 X
               </button>
             </li>
@@ -34,7 +34,8 @@ Oils.propTypes = {
   oils: PropTypes.arrayOf(PropTypes.object),
   unit: PropTypes.string,
   byPercent: PropTypes.bool,
-  setOilValue: PropTypes.func
+  setOilValue: PropTypes.func,
+  removeOil: PropTypes.func
 };
 
 function mapStateToProps(state) {
@@ -45,4 +46,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { setOilValue })(Oils);
+export default connect(mapStateToProps, { setOilValue, removeOil })(Oils);

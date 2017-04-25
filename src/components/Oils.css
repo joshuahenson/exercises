@@ -25,6 +25,7 @@
   color: red;
   opacity: 0;
   border: none;
+  background-color: transparent;
 }
 
 .oils li:hover .remove {
