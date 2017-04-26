@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import sap from '../data/sap.json';
-import Button from './Button';
+// import Button from './Button';
 import Checkbox from './Checkbox';
 import FilteredInput from './FilteredInput';
 import Radio from './Radio';
@@ -83,13 +83,6 @@ const App = (
           checked={byPercent}
           clickHandler={() => setByPercent()}
         />
-      </div>
-      <div>
-        <Button>Regular</Button>
-        <Button buttonClass="primary" round>Primary</Button>
-        <Button buttonClass="accent">Accent</Button>
-        <Button buttonClass="primary round">-</Button>
-        <Button buttonClass="primary-outline round">+</Button>
       </div>
       <div >
         <FilteredInput data={sap} clickHandler={addOil} />
