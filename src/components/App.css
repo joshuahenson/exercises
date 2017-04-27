@@ -23,7 +23,8 @@ ul {
 fieldset {
   border: 1px solid #E0EFF1;
   border-radius: 5px;
-  display: inline-block;
+  flex-shrink: 0;
+  padding: 20px;
 }
 
 legend {
@@ -44,6 +45,23 @@ input:focus  {
   border-color: #7DB4B5;
 }
 
+.container {
+  margin: 0 auto;
+  width: 90%;
+}
+
 .i-b {
   display: inline-block;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
 }

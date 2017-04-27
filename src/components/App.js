@@ -11,6 +11,7 @@ import InputUnit from './InputUnit';
 import {
   pickSoapType, addOil, pickUnit, setOilWeight, setWaterRatio, setSuperfatting, setByPercent
 } from '../actions';
+import './App.css';
 
 const App = (
   {
@@ -18,77 +19,87 @@ const App = (
     waterRatio, setWaterRatio, superfatting, setSuperfatting, byPercent, setByPercent
   }) => {
   return (
-    <form>
-      <fieldset>
-        <legend>Soap Type</legend>
-        <Radio
-          name="soap_type" id="NaOH_soap_type" label="Bar (NaOH)" value="naoh"
-          checked={soapType === 'naoh'}
-          clickHandler={() => pickSoapType('naoh')}
-        />
-        <Radio
-          name="soap_type" id="KOH_soap_type" label="Liquid (KOH)" value="koh"
-          checked={soapType === 'koh'}
-          clickHandler={() => pickSoapType('koh')}
-        />
-      </fieldset>
 
-      <fieldset>
-        <legend>Oil Weight</legend>
-        <InputUnit
-          id="oil_weight" min="0" unit={unit} value={oilWeight}
-          onChange={e => setOilWeight(e.target.value)}
-        />
-        <Radio
-          name="weight_units" id="oz_unit" label="Ounces (oz)" value="oz"
-          checked={unit === 'oz'}
-          clickHandler={() => pickUnit('oz')}
-        />
-        <Radio
-          name="weight_units" id="lb_unit" label="Pounds (lbs)" value="lbs"
-          checked={unit === 'lbs'}
-          clickHandler={() => pickUnit('lbs')}
-        />
-        <Radio
-          name="weight_units" id="g_unit" label="Grams (g)" value="g"
-          checked={unit === 'g'}
-          clickHandler={() => pickUnit('g')}
-        />
-        <Radio
-          name="weight_units" id="kg_unit" label="Kilograms (kg)" value="kg"
-          checked={unit === 'kg'}
-          clickHandler={() => pickUnit('kg')}
-        />
-      </fieldset>
+    <div className="container">
+      <form>
+        <div className="row">
+          <fieldset>
+            <legend>Soap Type</legend>
+            <Radio
+              name="soap_type" id="NaOH_soap_type" label="Bar (NaOH)" value="naoh"
+              checked={soapType === 'naoh'}
+              clickHandler={() => pickSoapType('naoh')}
+            />
+            <Radio
+              name="soap_type" id="KOH_soap_type" label="Liquid (KOH)" value="koh"
+              checked={soapType === 'koh'}
+              clickHandler={() => pickSoapType('koh')}
+            />
+          </fieldset>
 
-      <fieldset>
-        <legend>Water Ratio</legend>
-        <InputUnit
-          id="water_ratio" min="0" max="100" unit="%" value={waterRatio}
-          onChange={e => setWaterRatio(e.target.value)}
-        />
-      </fieldset>
+          <fieldset>
+            <legend>Oil Weight</legend>
+            <InputUnit
+              id="oil_weight" min="0" unit={unit} value={oilWeight}
+              onChange={e => setOilWeight(e.target.value)}
+            />
+            <Radio
+              name="weight_units" id="oz_unit" label="Ounces (oz)" value="oz"
+              checked={unit === 'oz'}
+              clickHandler={() => pickUnit('oz')}
+            />
+            <Radio
+              name="weight_units" id="lb_unit" label="Pounds (lbs)" value="lbs"
+              checked={unit === 'lbs'}
+              clickHandler={() => pickUnit('lbs')}
+            />
+            <Radio
+              name="weight_units" id="g_unit" label="Grams (g)" value="g"
+              checked={unit === 'g'}
+              clickHandler={() => pickUnit('g')}
+            />
+            <Radio
+              name="weight_units" id="kg_unit" label="Kilograms (kg)" value="kg"
+              checked={unit === 'kg'}
+              clickHandler={() => pickUnit('kg')}
+            />
+          </fieldset>
 
-      <fieldset>
-        <legend>Superfatting</legend>
-        <InputUnit
-          id="superfatting" min="0" max="100" unit="%" value={superfatting}
-          onChange={e => setSuperfatting(e.target.value)}
-        />
-      </fieldset>
+          <fieldset>
+            <legend>Water Ratio</legend>
+            <InputUnit
+              id="water_ratio" min="0" max="100" unit="%" value={waterRatio}
+              onChange={e => setWaterRatio(e.target.value)}
+            />
+          </fieldset>
 
-      <div>
-        <Checkbox
-          name="percent_checkbox" id="percent_checkbox" label="Add oils by percentage?"
-          checked={byPercent}
-          clickHandler={() => setByPercent()}
-        />
-      </div>
-      <div >
-        <FilteredInput data={sap} clickHandler={addOil} />
-        <Oils />
-      </div>
-    </form>
+          <fieldset>
+            <legend>Superfatting</legend>
+            <InputUnit
+              id="superfatting" min="0" max="100" unit="%" value={superfatting}
+              onChange={e => setSuperfatting(e.target.value)}
+            />
+          </fieldset>
+        </div>
+        <div className="row">
+          <fieldset>
+            <legend>Available Oils</legend>
+            <FilteredInput data={sap} clickHandler={addOil} />
+          </fieldset>
+          <fieldset>
+            <legend>Selected Oils</legend>
+            <div className="col">
+              <Checkbox
+                name="percent_checkbox" id="percent_checkbox" label="Add oils by percentage?"
+                checked={byPercent}
+                clickHandler={() => setByPercent()}
+              />
+              <Oils />
+            </div>
+          </fieldset>
+        </div>
+      </form>
+    </div>
   );
 };
 
