@@ -92,7 +92,7 @@ const App = (
               <Checkbox
                 name="percent_checkbox" id="percent_checkbox" label="Add oils by percentage?"
                 checked={byPercent}
-                clickHandler={() => setByPercent()}
+                clickHandler={() => setByPercent(byPercent, oilWeight)}
               />
               <Oils />
             </div>

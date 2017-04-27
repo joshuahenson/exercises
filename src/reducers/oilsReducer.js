@@ -5,6 +5,13 @@ const updateValue = (state, action) => {
   return state;
 };
 
+const convertValue = (state, action) => {
+  if (action.inPercent) { // convert percent to unit
+    return { ...state, value: (state.value / 100 * action.oilWeight).toString() };
+  } // convert unit to percent
+  return { ...state, value: (state.value / action.oilWeight * 100).toString() };
+};
+
 export default(state = [], action) => {
   switch (action.type) {
     case 'ADD_OIL':
@@ -16,6 +23,8 @@ export default(state = [], action) => {
       return state.filter(oil => oil.oilId !== action.oilId);
     case 'SET_OIL_VALUE':
       return state.map(oil => updateValue(oil, action));
+    case 'OIL_BY_PERCENT':
+      return state.map(oil => convertValue(oil, action));
     default:
       return state;
   }
