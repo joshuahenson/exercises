@@ -25,6 +25,7 @@ fieldset {
   border-radius: 5px;
   flex-shrink: 0;
   padding: 20px;
+  margin: 15px;
 }
 
 legend {
@@ -56,7 +57,7 @@ input:focus  {
 
 .row {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
 }

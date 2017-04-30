@@ -64,28 +64,25 @@ const App = (
               clickHandler={() => pickUnit('kg')}
             />
           </fieldset>
+          <div className="row">
+            <fieldset>
+              <legend>Water Ratio</legend>
+              <InputUnit
+                id="water_ratio" min="0" max="100" unit="%" value={waterRatio}
+                onChange={e => setWaterRatio(e.target.value)}
+              />
+            </fieldset>
 
-          <fieldset>
-            <legend>Water Ratio</legend>
-            <InputUnit
-              id="water_ratio" min="0" max="100" unit="%" value={waterRatio}
-              onChange={e => setWaterRatio(e.target.value)}
-            />
-          </fieldset>
-
-          <fieldset>
-            <legend>Superfatting</legend>
-            <InputUnit
-              id="superfatting" min="0" max="100" unit="%" value={superfatting}
-              onChange={e => setSuperfatting(e.target.value)}
-            />
-          </fieldset>
+            <fieldset>
+              <legend>Superfatting</legend>
+              <InputUnit
+                id="superfatting" min="0" max="100" unit="%" value={superfatting}
+                onChange={e => setSuperfatting(e.target.value)}
+              />
+            </fieldset>
+          </div>
         </div>
         <div className="row">
-          <fieldset>
-            <legend>Available Oils</legend>
-            <FilteredInput data={sap} clickHandler={addOil} />
-          </fieldset>
           <fieldset>
             <legend>Selected Oils</legend>
             <div className="col">
@@ -97,6 +94,11 @@ const App = (
               <Oils />
             </div>
           </fieldset>
+          <fieldset>
+            <legend>Available Oils</legend>
+            <FilteredInput data={sap} clickHandler={addOil} />
+          </fieldset>
+
         </div>
       </form>
     </div>
