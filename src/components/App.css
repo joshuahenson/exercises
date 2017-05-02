@@ -1,5 +1,8 @@
 html {
   box-sizing: border-box;
+  /*Prevent jumping scrollbar when filtering oils*/
+  margin-left: calc(100vw - 100%);
+  margin-right: 0;
 }
 
 *, *:before, *:after {
