@@ -2,21 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import sap from '../data/sap.json';
-// import Button from './Button';
+import Button from './Button';
 import Checkbox from './Checkbox';
 import FilteredInput from './FilteredInput';
 import Radio from './Radio';
 import Oils from './Oils';
 import InputUnit from './InputUnit';
 import {
-  pickSoapType, addOil, pickUnit, setOilWeight, setWaterRatio, setSuperfatting, setByPercent
+  pickSoapType, addOil, pickUnit, setOilWeight, setWaterRatio, setSuperfatting, setByPercent,
+  resetDefaults
 } from '../actions';
 import './App.css';
 
 const App = (
   {
-    soapType, pickSoapType, addOil, unit, pickUnit, oilWeight, setOilWeight,
-    waterRatio, setWaterRatio, superfatting, setSuperfatting, byPercent, setByPercent
+    soapType, pickSoapType, addOil, unit, pickUnit, oilWeight, setOilWeight, waterRatio,
+    setWaterRatio, superfatting, setSuperfatting, byPercent, setByPercent, resetDefaults
   }) => {
   return (
 
@@ -98,7 +99,13 @@ const App = (
             <legend>Available Oils</legend>
             <FilteredInput data={sap} clickHandler={addOil} />
           </fieldset>
-
+        </div>
+        <div className="row">
+          <Button className="primary-outline flex" type="button" clickHandler={resetDefaults}>
+            Reset Defaults
+          </Button>
+          <Button className="primary-outline flex">Clear All</Button>
+          <Button className="accent flex-two">Calculate</Button>
         </div>
       </form>
     </div>
@@ -118,7 +125,8 @@ App.propTypes = {
   superfatting: PropTypes.string,
   setSuperfatting: PropTypes.func,
   byPercent: PropTypes.bool,
-  setByPercent: PropTypes.func
+  setByPercent: PropTypes.func,
+  resetDefaults: PropTypes.func
 };
 
 const mapStateToProps = (state) => {
@@ -134,5 +142,14 @@ const mapStateToProps = (state) => {
 
 export default connect(
   mapStateToProps,
-  { pickSoapType, addOil, pickUnit, setOilWeight, setWaterRatio, setSuperfatting, setByPercent }
+  {
+    pickSoapType,
+    addOil,
+    pickUnit,
+    setOilWeight,
+    setWaterRatio,
+    setSuperfatting,
+    setByPercent,
+    resetDefaults
+  }
 )(App);

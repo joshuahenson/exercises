@@ -12,7 +12,9 @@ const convertValue = (state, action) => {
   return { ...state, value: (state.value / action.oilWeight * 100).toString() };
 };
 
-export default(state = [], action) => {
+const initialState = [];
+
+export default(state = initialState, action) => {
   switch (action.type) {
     case 'ADD_OIL':
       if (state.some(oil => oil.oilId === action.oil.oilId)) {
@@ -25,6 +27,8 @@ export default(state = [], action) => {
       return state.map(oil => updateValue(oil, action));
     case 'OIL_BY_PERCENT':
       return state.map(oil => convertValue(oil, action));
+    case 'RESET_DEFAULTS':
+      return initialState;
     default:
       return state;
   }

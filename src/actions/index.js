@@ -62,3 +62,9 @@ export function setOilValue(value, oilId) {
     oilId
   };
 }
+
+export function resetDefaults() {
+  return {
+    type: 'RESET_DEFAULTS'
+  };
+}

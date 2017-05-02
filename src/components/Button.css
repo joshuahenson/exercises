@@ -23,6 +23,16 @@ button:hover {
   color: #000;
 }
 
+button.flex {
+  flex: 1;
+  padding: 10px 0;
+}
+
+button.flex-two {
+  flex: 2;
+  padding: 10px 0;
+}
+
 button.round {
   height: 30px;
   width: 30px;
