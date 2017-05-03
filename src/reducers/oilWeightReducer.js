@@ -6,6 +6,8 @@ export default(state = initialState, action) => {
       return action.weight;
     case 'RESET_DEFAULTS':
       return initialState;
+    case 'CLEAR_ALL':
+      return '';
     default:
       return state;
   }

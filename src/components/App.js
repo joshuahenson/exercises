@@ -10,14 +10,15 @@ import Oils from './Oils';
 import InputUnit from './InputUnit';
 import {
   pickSoapType, addOil, pickUnit, setOilWeight, setWaterRatio, setSuperfatting, setByPercent,
-  resetDefaults
+  resetDefaults, clearAll
 } from '../actions';
 import './App.css';
 
 const App = (
   {
     soapType, pickSoapType, addOil, unit, pickUnit, oilWeight, setOilWeight, waterRatio,
-    setWaterRatio, superfatting, setSuperfatting, byPercent, setByPercent, resetDefaults
+    setWaterRatio, superfatting, setSuperfatting, byPercent, setByPercent, resetDefaults,
+    clearAll
   }) => {
   return (
 
@@ -104,7 +105,9 @@ const App = (
           <Button className="primary-outline flex" type="button" clickHandler={resetDefaults}>
             Reset Defaults
           </Button>
-          <Button className="primary-outline flex">Clear All</Button>
+          <Button className="primary-outline flex" type="button" clickHandler={clearAll}>
+            Clear All
+          </Button>
           <Button className="accent flex-two">Calculate</Button>
         </div>
       </form>
@@ -126,7 +129,8 @@ App.propTypes = {
   setSuperfatting: PropTypes.func,
   byPercent: PropTypes.bool,
   setByPercent: PropTypes.func,
-  resetDefaults: PropTypes.func
+  resetDefaults: PropTypes.func,
+  clearAll: PropTypes.func
 };
 
 const mapStateToProps = (state) => {
@@ -142,14 +146,13 @@ const mapStateToProps = (state) => {
 
 export default connect(
   mapStateToProps,
-  {
-    pickSoapType,
+  { pickSoapType,
     addOil,
     pickUnit,
     setOilWeight,
     setWaterRatio,
     setSuperfatting,
     setByPercent,
-    resetDefaults
-  }
+    resetDefaults,
+    clearAll }
 )(App);

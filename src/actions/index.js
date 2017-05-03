@@ -68,3 +68,9 @@ export function resetDefaults() {
     type: 'RESET_DEFAULTS'
   };
 }
+
+export function clearAll() {
+  return {
+    type: 'CLEAR_ALL'
+  };
+}

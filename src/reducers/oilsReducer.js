@@ -28,6 +28,7 @@ export default(state = initialState, action) => {
     case 'OIL_BY_PERCENT':
       return state.map(oil => convertValue(oil, action));
     case 'RESET_DEFAULTS':
+    case 'CLEAR_ALL':
       return initialState;
     default:
       return state;
