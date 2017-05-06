@@ -1,12 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import round from 'lodash/round';
 import './Recipe.css';
 
-// TODO: redirect to calculator if no oils
+// TODO: validate other things in case someone loads route directly
 
 const Recipe = ({ oils, unit, oilWeight, waterRatio, soapType }) => {
+  if (oils.length === 0) {
+    return <Redirect to="/" />;
+  }
   return (
     <div className="recipe">
       <table>
