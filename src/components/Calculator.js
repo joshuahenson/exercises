@@ -14,16 +14,25 @@ import {
 } from '../actions';
 import './Calculator.css';
 
+// TODO: add notification when adding oil
+
+const handleSubmit = (e, history, setByPercent, byPercent, oilWeight) => {
+  e.preventDefault();
+  if (byPercent) {
+    setByPercent(byPercent, oilWeight);
+  }
+  history.push('/recipe');
+};
+
 const Calculator = (
   {
     soapType, pickSoapType, addOil, unit, pickUnit, oilWeight, setOilWeight, waterRatio,
     setWaterRatio, superfatting, setSuperfatting, byPercent, setByPercent, resetDefaults,
-    clearAll
+    clearAll, history
   }) => {
   return (
-
     <div className="container">
-      <form>
+      <form onSubmit={e => handleSubmit(e, history, setByPercent, byPercent, oilWeight)}>
         <div className="row">
           <fieldset>
             <legend>Soap Type</legend>
@@ -40,41 +49,14 @@ const Calculator = (
           </fieldset>
 
           <fieldset>
-            <legend>Oil Weight</legend>
+            <legend>Water Ratio</legend>
             <InputUnit
-              id="oil_weight" min="0" unit={unit} value={oilWeight}
-              onChange={e => setOilWeight(e.target.value)}
-            />
-            <Radio
-              name="weight_units" id="oz_unit" label="Ounces (oz)" value="oz"
-              checked={unit === 'oz'}
-              clickHandler={() => pickUnit('oz')}
-            />
-            <Radio
-              name="weight_units" id="lb_unit" label="Pounds (lbs)" value="lbs"
-              checked={unit === 'lbs'}
-              clickHandler={() => pickUnit('lbs')}
-            />
-            <Radio
-              name="weight_units" id="g_unit" label="Grams (g)" value="g"
-              checked={unit === 'g'}
-              clickHandler={() => pickUnit('g')}
-            />
-            <Radio
-              name="weight_units" id="kg_unit" label="Kilograms (kg)" value="kg"
-              checked={unit === 'kg'}
-              clickHandler={() => pickUnit('kg')}
+              id="water_ratio" min="0" max="100" unit="%" value={waterRatio}
+              onChange={e => setWaterRatio(e.target.value)}
             />
           </fieldset>
-          <div className="row">
-            <fieldset>
-              <legend>Water Ratio</legend>
-              <InputUnit
-                id="water_ratio" min="0" max="100" unit="%" value={waterRatio}
-                onChange={e => setWaterRatio(e.target.value)}
-              />
-            </fieldset>
 
+          <div className="row">
             <fieldset>
               <legend>Superfatting</legend>
               <InputUnit
@@ -82,9 +64,42 @@ const Calculator = (
                 onChange={e => setSuperfatting(e.target.value)}
               />
             </fieldset>
+
+            <fieldset>
+              <legend>Oil Weight</legend>
+              <InputUnit
+                id="oil_weight" min="0" unit={unit} value={oilWeight}
+                onChange={e => setOilWeight(e.target.value)}
+              />
+              <Radio
+                name="weight_units" id="oz_unit" label="Ounces (oz)" value="oz"
+                checked={unit === 'oz'}
+                clickHandler={() => pickUnit('oz')}
+              />
+              <Radio
+                name="weight_units" id="lb_unit" label="Pounds (lb)" value="lb"
+                checked={unit === 'lb'}
+                clickHandler={() => pickUnit('lb')}
+              />
+              <Radio
+                name="weight_units" id="g_unit" label="Grams (g)" value="g"
+                checked={unit === 'g'}
+                clickHandler={() => pickUnit('g')}
+              />
+              <Radio
+                name="weight_units" id="kg_unit" label="Kilograms (kg)" value="kg"
+                checked={unit === 'kg'}
+                clickHandler={() => pickUnit('kg')}
+              />
+            </fieldset>
           </div>
         </div>
         <div className="row">
+          <fieldset>
+            <legend>Available Oils</legend>
+            <FilteredInput data={sap} clickHandler={addOil} />
+          </fieldset>
+
           <fieldset>
             <legend>Selected Oils</legend>
             <div className="col">
@@ -96,19 +111,15 @@ const Calculator = (
               <Oils />
             </div>
           </fieldset>
-          <fieldset>
-            <legend>Available Oils</legend>
-            <FilteredInput data={sap} clickHandler={addOil} />
-          </fieldset>
         </div>
         <div className="row">
-          <Button className="primary-outline flex" type="button" clickHandler={resetDefaults}>
+          <Button className="primary flex" type="button" clickHandler={resetDefaults}>
             Reset Defaults
           </Button>
-          <Button className="primary-outline flex" type="button" clickHandler={clearAll}>
+          <Button className="primary flex" type="button" clickHandler={clearAll}>
             Clear All
           </Button>
-          <Button className="accent flex-two">Calculate</Button>
+          <Button className="accent flex-two" type="submit">Calculate</Button>
         </div>
       </form>
     </div>
@@ -130,7 +141,8 @@ Calculator.propTypes = {
   byPercent: PropTypes.bool,
   setByPercent: PropTypes.func,
   resetDefaults: PropTypes.func,
-  clearAll: PropTypes.func
+  clearAll: PropTypes.func,
+  history: PropTypes.object
 };
 
 const mapStateToProps = (state) => {
