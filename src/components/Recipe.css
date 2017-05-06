@@ -1,0 +1,30 @@
+.recipe {
+  display: flex;
+  justify-content: center;
+}
+
+.recipe table {
+  border-color: gray;
+  border-collapse: collapse;
+}
+
+.recipe .ingredient {
+  width: 18em;
+}
+
+.recipe th {
+  text-align: left;
+}
+
+.recipe td,
+.recipe th {
+  padding: 5px 10px;
+}
+
+.recipe th {
+  border-bottom: 2px solid #E0EFF1;
+}
+
+.recipe tr:not(:last-child) td {
+  border-bottom: 1px solid #E0EFF1;
+}
