@@ -33,7 +33,7 @@ const Oils = ({ oils, unit, byPercent, setOilValue, removeOil, oilWeight }) => {
         {
           byPercent ?
           `${100 - totalIngredients}% remaining` :
-          `${oilWeight - totalIngredients}${unit} remaining`
+          `${oilWeight - totalIngredients} ${unit} remaining`
         }
       </p>
     </div>
