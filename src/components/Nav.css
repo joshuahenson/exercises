@@ -1,0 +1,21 @@
+.nav {
+  padding-bottom: 10px;
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.nav .logo-saponi,
+.nav .logo-calc {
+  color: #680148;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.nav .logo-saponi {
+  font-size: 2rem;
+}
+
+.nav .logo-calc {
+  font-size: 2.25rem;
+}

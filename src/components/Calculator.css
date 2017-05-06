@@ -49,11 +49,6 @@ input:focus  {
   border-color: #7DB4B5;
 }
 
-.container {
-  margin: 0 auto;
-  width: 90%;
-}
-
 .i-b {
   display: inline-block;
 }
