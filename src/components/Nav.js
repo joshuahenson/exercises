@@ -4,10 +4,12 @@ import './Nav.css';
 
 const Nav = () => {
   return (
-    <nav className="nav">
-      <Link to="/">
-        <span className="logo-saponi">saponi</span><span className="logo-calc">Calc</span>
-      </Link>
+    <nav className="nav fixed">
+      <div className="container">
+        <Link to="/">
+          <span className="logo-saponi">saponi</span><span className="logo-calc">Calc</span>
+        </Link>
+      </div>
     </nav>
   );
 };
