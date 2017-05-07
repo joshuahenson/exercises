@@ -31,7 +31,7 @@ const Calculator = (
     clearAll, history
   }) => {
   return (
-    <div>
+    <div className="calculator">
       <form onSubmit={e => handleSubmit(e, history, setByPercent, byPercent, oilWeight)}>
         <div className="row">
           <fieldset>
