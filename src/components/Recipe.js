@@ -7,7 +7,7 @@ import './Recipe.css';
 
 // TODO: validate other things in case someone loads route directly
 
-const Recipe = ({ oils, unit, oilWeight, waterRatio, soapType }) => {
+const Recipe = ({ oils, unit, oilWeight, waterPercent, soapType }) => {
   if (oils.length === 0) {
     return <Redirect to="/" />;
   }
@@ -23,7 +23,7 @@ const Recipe = ({ oils, unit, oilWeight, waterRatio, soapType }) => {
         <tbody>
           <tr>
             <td>Water</td>
-            <td>{`${round(oilWeight * waterRatio / 100, 2)} ${unit}`}</td>
+            <td>{`${round(oilWeight * waterPercent / 100, 2)} ${unit}`}</td>
           </tr>
           <tr>
             <td>{soapType === 'naoh' ? 'Sodium Hydroxide (NaOH)' : 'Potassium Hydroxide (KOH)'}</td>
@@ -47,7 +47,7 @@ Recipe.propTypes = {
   oils: PropTypes.arrayOf(PropTypes.object),
   unit: PropTypes.string,
   oilWeight: PropTypes.string,
-  waterRatio: PropTypes.string,
+  waterPercent: PropTypes.string,
   soapType: PropTypes.string
 };
 
@@ -56,7 +56,7 @@ function mapStateToProps(state) {
     oils: state.oils,
     unit: state.unit,
     oilWeight: state.oilWeight,
-    waterRatio: state.waterRatio,
+    waterPercent: state.waterPercent,
     soapType: state.soapType
   };
 }

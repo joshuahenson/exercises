@@ -9,7 +9,7 @@ import Radio from './Radio';
 import Oils from './Oils';
 import InputUnit from './InputUnit';
 import {
-  pickSoapType, addOil, pickUnit, setOilWeight, setWaterRatio, setSuperfatting, setByPercent,
+  pickSoapType, addOil, pickUnit, setOilWeight, setWaterPercent, setSuperfatting, setByPercent,
   resetDefaults, clearAll
 } from '../actions';
 import './Calculator.css';
@@ -26,8 +26,8 @@ const handleSubmit = (e, history, setByPercent, byPercent, oilWeight) => {
 
 const Calculator = (
   {
-    soapType, pickSoapType, addOil, unit, pickUnit, oilWeight, setOilWeight, waterRatio,
-    setWaterRatio, superfatting, setSuperfatting, byPercent, setByPercent, resetDefaults,
+    soapType, pickSoapType, addOil, unit, pickUnit, oilWeight, setOilWeight, waterPercent,
+    setWaterPercent, superfatting, setSuperfatting, byPercent, setByPercent, resetDefaults,
     clearAll, history
   }) => {
   return (
@@ -49,10 +49,10 @@ const Calculator = (
           </fieldset>
 
           <fieldset>
-            <legend>Water Ratio</legend>
+            <legend>Water: % of Oils</legend>
             <InputUnit
-              id="water_ratio" min="0" max="100" unit="%" value={waterRatio}
-              onChange={e => setWaterRatio(e.target.value)}
+              id="water_Percent" min="0" max="100" unit="%" value={waterPercent}
+              onChange={e => setWaterPercent(e.target.value)}
             />
           </fieldset>
 
@@ -134,8 +134,8 @@ Calculator.propTypes = {
   pickUnit: PropTypes.func,
   oilWeight: PropTypes.string,
   setOilWeight: PropTypes.func,
-  waterRatio: PropTypes.string,
-  setWaterRatio: PropTypes.func,
+  waterPercent: PropTypes.string,
+  setWaterPercent: PropTypes.func,
   superfatting: PropTypes.string,
   setSuperfatting: PropTypes.func,
   byPercent: PropTypes.bool,
@@ -150,7 +150,7 @@ const mapStateToProps = (state) => {
     soapType: state.soapType,
     unit: state.unit,
     oilWeight: state.oilWeight,
-    waterRatio: state.waterRatio,
+    waterPercent: state.waterPercent,
     superfatting: state.superfatting,
     byPercent: state.byPercent
   };
@@ -162,7 +162,7 @@ export default connect(
     addOil,
     pickUnit,
     setOilWeight,
-    setWaterRatio,
+    setWaterPercent,
     setSuperfatting,
     setByPercent,
     resetDefaults,

@@ -3,7 +3,7 @@ import soapType from './soapTypeReducer';
 import oils from './oilsReducer';
 import unit from './unitReducer';
 import oilWeight from './oilWeightReducer';
-import waterRatio from './waterRatioReducer';
+import waterPercent from './waterPercentReducer';
 import superfatting from './superfattingReducer';
 import byPercent from './byPercentReducer';
 
@@ -12,7 +12,7 @@ const rootReducer = combineReducers({
   oils,
   unit,
   oilWeight,
-  waterRatio,
+  waterPercent,
   superfatting,
   byPercent
 });

@@ -33,10 +33,10 @@ export function setOilWeight(weight) {
   };
 }
 
-export function setWaterRatio(ratio) {
+export function setWaterPercent(Percent) {
   return {
-    type: 'SET_WATER_RATIO',
-    ratio
+    type: 'SET_WATER_Percent',
+    Percent
   };
 }
 
