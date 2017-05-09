@@ -1,410 +1,1016 @@
 [
- {
-   "oilId": "almond_oil",
-   "oil": "Almond Oil",
-   "naoh": 0.1367,
-   "koh": 0.1925
- },
- {
-   "oilId": "aloe_vera_butter",
-   "oil": "Aloe Vera Butter",
-   "naoh": 0.1788,
-   "koh": 0.2518
- },
- {
-   "oilId": "aloe_vera_oil",
-   "oil": "Aloe Vera Oil",
-   "naoh": 0.1421,
-   "koh": 0.2001
- },
- {
-   "oilId": "apricot_kernel_oil",
-   "oil": "Apricot Kernel Oil",
-   "naoh": 0.1378,
-   "koh": 0.1941
- },
- {
-   "oilId": "avocado_butter",
-   "oil": "Avocado Butter",
-   "naoh": 0.1339,
-   "koh": 0.1886
- },
- {
-   "oilId": "avocado_oil",
-   "oil": "Avocado Oil",
-   "naoh": 0.1337,
-   "koh": 0.1883
- },
- {
-   "oilId": "babassu_nut_oil",
-   "oil": "Babassu Nut Oil",
-   "naoh": 0.1749,
-   "koh": 0.2463
- },
- {
-   "oilId": "beeswax",
-   "oil": "Beeswax",
-   "naoh": 0.0689,
-   "koh": 0.097
- },
- {
-   "oilId": "borage_oil",
-   "oil": "Borage Oil",
-   "naoh": 0.1339,
-   "koh": 0.1886
- },
- {
-   "oilId": "candelilla_wax",
-   "oil": "Candelilla Wax",
-   "naoh": 0.0322,
-   "koh": 0.0454
- },
- {
-   "oilId": "canola_oil",
-   "oil": "Canola Oil",
-   "naoh": 0.1328,
-   "koh": 0.187
- },
- {
-   "oilId": "canola_oil-high_oleic_acid",
-   "oil": "Canola Oil, High Oleic Acid",
-   "naoh": 0.133,
-   "koh": 0.1873
- },
- {
-   "oilId": "castor_bean_oil",
-   "oil": "Castor Bean Oil",
-   "naoh": 0.1286,
-   "koh": 0.1811
- },
- {
-   "oilId": "cherry_kernel_oil",
-   "oil": "Cherry Kernel Oil",
-   "naoh": 0.1389,
-   "koh": 0.1956
- },
- {
-   "oilId": "chicken_fat",
-   "oil": "Chicken Fat",
-   "naoh": 0.1356,
-   "koh": 0.191
- },
- {
-   "oilId": "cocoa_butter",
-   "oil": "Cocoa Butter",
-   "naoh": 0.1378,
-   "koh": 0.1941
- },
- {
-   "oilId": "coconut_oil-refined_76",
-   "oil": "Coconut Oil, Refined 76°",
-   "naoh": 0.191,
-   "koh": 0.269
- },
- {
-   "oilId": "coconut_oil-hydrogenated_92",
-   "oil": "Coconut Oil, Hydrogenated 92°",
-   "naoh": 0.191,
-   "koh": 0.269
- },
- {
-   "oilId": "coconut_oil-fractionated/saturated",
-   "oil": "Coconut Oil, Fractionated/Saturated",
-   "naoh": 0.2321,
-   "koh": 0.3269
- },
- {
-   "oilId": "corn_oil",
-   "oil": "Corn Oil",
-   "naoh": 0.1368,
-   "koh": 0.1927
- },
- {
-   "oilId": "cottonseed_oil",
-   "oil": "Cottonseed Oil",
-   "naoh": 0.1387,
-   "koh": 0.1954
- },
- {
-   "oilId": "crisco®_vegetable_shortening",
-   "oil": "Crisco® Vegetable Shortening",
-   "naoh": 0.1369,
-   "koh": 0.1928
- },
- {
-   "oilId": "emu_oil",
-   "oil": "Emu Oil",
-   "naoh": 0.1377,
-   "koh": 0.1939
- },
- {
-   "oilId": "evening_primrose_oil",
-   "oil": "Evening Primrose Oil",
-   "naoh": 0.1362,
-   "koh": 0.1918
- },
- {
-   "oilId": "flaxseed_oil",
-   "oil": "Flaxseed Oil",
-   "naoh": 0.1358,
-   "koh": 0.1913
- },
- {
-   "oilId": "goat_fat",
-   "oil": "Goat Fat",
-   "naoh": 0.1382,
-   "koh": 0.1946
- },
- {
-   "oilId": "goose_fat",
-   "oil": "Goose Fat",
-   "naoh": 0.1349,
-   "koh": 0.19
- },
- {
-   "oilId": "grapeseed_oil",
-   "oil": "Grapeseed Oil",
-   "naoh": 0.1321,
-   "koh": 0.1861
- },
- {
-   "oilId": "hazelnut_oil",
-   "oil": "Hazelnut Oil",
-   "naoh": 0.1369,
-   "koh": 0.1928
- },
- {
-   "oilId": "hempseed_oil",
-   "oil": "Hempseed Oil",
-   "naoh": 0.1359,
-   "koh": 0.1914
- },
- {
-   "oilId": "jojoba_seed_oil",
-   "oil": "Jojoba Seed Oil",
-   "naoh": 0.0695,
-   "koh": 0.0979
- },
- {
-   "oilId": "jojoba_seed_liquid_wax",
-   "oil": "Jojoba Seed Liquid Wax",
-   "naoh": 0.0695,
-   "koh": 0.0979
- },
- {
-   "oilId": "karite_butter",
-   "oil": "Karite Butter",
-   "naoh": 0.1296,
-   "koh": 0.1825
- },
- {
-   "oilId": "kukui_nut_oil",
-   "oil": "Kukui Nut Oil",
-   "naoh": 0.1351,
-   "koh": 0.1903
- },
- {
-   "oilId": "lanolin",
-   "oil": "Lanolin",
-   "naoh": 0.0748,
-   "koh": 0.1054
- },
- {
-   "oilId": "lard",
-   "oil": "Lard",
-   "naoh": 0.1399,
-   "koh": 0.197
- },
- {
-   "oilId": "linseed_oil",
-   "oil": "Linseed Oil",
-   "naoh": 0.1358,
-   "koh": 0.1913
- },
- {
-   "oilId": "macadamia_nut_oil",
-   "oil": "Macadamia Nut Oil",
-   "naoh": 0.1391,
-   "koh": 0.1959
- },
- {
-   "oilId": "milk_fat",
-   "oil": "Milk Fat",
-   "naoh": 0.1599,
-   "koh": 0.2252
- },
- {
-   "oilId": "mink_oil",
-   "oil": "Mink Oil",
-   "naoh": 0.1403,
-   "koh": 0.1976
- },
- {
-   "oilId": "monoi_de_tahiti_oil",
-   "oil": "Monoï de Tahiti Oil",
-   "naoh": 0.1796,
-   "koh": 0.253
- },
- {
-   "oilId": "neem_tree_oil",
-   "oil": "Neem Tree Oil",
-   "naoh": 0.1372,
-   "koh": 0.1932
- },
- {
-   "oilId": "olive_oil",
-   "oil": "Olive Oil",
-   "naoh": 0.1353,
-   "koh": 0.1906
- },
- {
-   "oilId": "ostrich_oil",
-   "oil": "Ostrich Oil",
-   "naoh": 0.1385,
-   "koh": 0.1951
- },
- {
-   "oilId": "palm_kernel_oil",
-   "oil": "Palm Kernel Oil",
-   "naoh": 0.1777,
-   "koh": 0.2503
- },
- {
-   "oilId": "palm_oil",
-   "oil": "Palm Oil",
-   "naoh": 0.142,
-   "koh": 0.2
- },
- {
-   "oilId": "peach_kernel_oil",
-   "oil": "Peach Kernel Oil",
-   "naoh": 0.1361,
-   "koh": 0.1917
- },
- {
-   "oilId": "peanut_oil",
-   "oil": "Peanut Oil",
-   "naoh": 0.1367,
-   "koh": 0.1925
- },
- {
-   "oilId": "pumpkin_seed_oil",
-   "oil": "Pumpkin Seed Oil",
-   "naoh": 0.1389,
-   "koh": 0.1956
- },
- {
-   "oilId": "rapeseed_oil",
-   "oil": "Rapeseed Oil",
-   "naoh": 0.1328,
-   "koh": 0.187
- },
- {
-   "oilId": "rice_bran_oil",
-   "oil": "Rice Bran Oil",
-   "naoh": 0.1284,
-   "koh": 0.1808
- },
- {
-   "oilId": "safflower_oil-high_linoleic_acid",
-   "oil": "Safflower Oil, High Linoleic Acid",
-   "naoh": 0.1374,
-   "koh": 0.1935
- },
- {
-   "oilId": "safflower_oil-high_oleic_acid",
-   "oil": "Safflower Oil, High Oleic Acid",
-   "naoh": 0.1369,
-   "koh": 0.1928
- },
- {
-   "oilId": "sesame_seed_oil",
-   "oil": "Sesame Seed Oil",
-   "naoh": 0.1336,
-   "koh": 0.1882
- },
- {
-   "oilId": "shea_butter",
-   "oil": "Shea Butter",
-   "naoh": 0.1296,
-   "koh": 0.1825
- },
- {
-   "oilId": "soybean_oil",
-   "oil": "Soybean Oil",
-   "naoh": 0.1359,
-   "koh": 0.1914
- },
- {
-   "oilId": "soybean_oil-27.5%_hydrogenated",
-   "oil": "Soybean Oil, 27.5% Hydrogenated",
-   "naoh": 0.1361,
-   "koh": 0.1917
- },
- {
-   "oilId": "stearic_acid-animal-source",
-   "oil": "Stearic Acid, Animal-Source",
-   "naoh": 0.1413,
-   "koh": 0.199
- },
- {
-   "oilId": "stearic_acid-vegetable-source",
-   "oil": "Stearic Acid, Vegetable-Source",
-   "naoh": 0.1411,
-   "koh": 0.1987
- },
- {
-   "oilId": "sunflower_seed_oil",
-   "oil": "Sunflower Seed Oil",
-   "naoh": 0.1358,
-   "koh": 0.1913
- },
- {
-   "oilId": "sunflower_seed_oil-high_oleic_acid",
-   "oil": "Sunflower Seed Oil, High Oleic Acid",
-   "naoh": 0.1351,
-   "koh": 0.1903
- },
- {
-   "oilId": "tallow-beef",
-   "oil": "Tallow, Beef",
-   "naoh": 0.1419,
-   "koh": 0.1999
- },
- {
-   "oilId": "tallow-deer",
-   "oil": "Tallow, Deer",
-   "naoh": 0.1382,
-   "koh": 0.1946
- },
- {
-   "oilId": "tallow-sheep",
-   "oil": "Tallow, Sheep",
-   "naoh": 0.1384,
-   "koh": 0.1949
- },
- {
-   "oilId": "tamanu_seed_oil",
-   "oil": "Tamanu Seed Oil",
-   "naoh": 0.1437,
-   "koh": 0.2024
- },
- {
-   "oilId": "tiare_flower_oil",
-   "oil": "Tiaré Flower Oil",
-   "naoh": 0.1796,
-   "koh": 0.253
- },
- {
-   "oilId": "walnut_oil",
-   "oil": "Walnut Oil",
-   "naoh": 0.1349,
-   "koh": 0.19
- },
- {
-   "oilId": "wheat_germ_oil",
-   "oil": "Wheat Germ Oil",
-   "naoh": 0.1319,
-   "koh": 0.1858
- }
+  {
+    "oilId": "almond_butter",
+    "oil": "Almond Butter",
+    "naoh": 0.082,
+    "koh": 0.115,
+    "bubbly": 1,
+    "cleansing": 1,
+    "conditioning": 74,
+    "creamy": 24,
+    "hardness": 25,
+    "iodine": 70,
+    "ins": 118
+  },
+  {
+    "oilId": "almond_oil",
+    "oil": "Almond Oil",
+    "naoh": 0.1367,
+    "koh": 0.1925,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 89,
+    "creamy": 7,
+    "hardness": 7,
+    "iodine": 99,
+    "ins": 97
+  },
+  {
+    "oilId": "aloe_vera_butter",
+    "oil": "Aloe Vera Butter",
+    "naoh": 0.1788,
+    "koh": 0.2518,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 0,
+    "creamy": 0,
+    "hardness": 0,
+    "iodine": 0,
+    "ins": 249
+  },
+  {
+    "oilId": "apricot_kernel_oil",
+    "oil": "Apricot Kernel Oil",
+    "naoh": 0.1378,
+    "koh": 0.1941,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 93,
+    "creamy": 6,
+    "hardness": 6,
+    "iodine": 100,
+    "ins": 91
+  },
+  {
+    "oilId": "argan_oil",
+    "oil": "Argan Oil",
+    "naoh": 0.135,
+    "koh": 0.19,
+    "bubbly": 1,
+    "cleansing": 1,
+    "conditioning": 81,
+    "creamy": 14,
+    "hardness": 15,
+    "iodine": 95,
+    "ins": 95
+  },
+  {
+    "oilId": "avocado_butter",
+    "oil": "Avocado Butter",
+    "naoh": 0.1339,
+    "koh": 0.1886,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 61,
+    "creamy": 31,
+    "hardness": 31,
+    "iodine": 67,
+    "ins": 120
+  },
+  {
+    "oilId": "avocado_oil",
+    "oil": "Avocado Oil",
+    "naoh": 0.1337,
+    "koh": 0.1883,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 70,
+    "creamy": 22,
+    "hardness": 22,
+    "iodine": 86,
+    "ins": 99
+  },
+  {
+    "oilId": "babassu_nut_oil",
+    "oil": "Babassu Nut Oil",
+    "naoh": 0.1749,
+    "koh": 0.2463,
+    "bubbly": 70,
+    "cleansing": 70,
+    "conditioning": 10,
+    "creamy": 15,
+    "hardness": 85,
+    "iodine": 15,
+    "ins": 230
+  },
+  {
+    "oilId": "baobab_oil",
+    "oil": "Baobab Oil",
+    "naoh": 0.135,
+    "koh": 0.19,
+    "bubbly": 1,
+    "cleansing": 1,
+    "conditioning": 67,
+    "creamy": 28,
+    "hardness": 29,
+    "iodine": 75,
+    "ins": 125
+  },
+  {
+    "oilId": "beeswax",
+    "oil": "Beeswax",
+    "naoh": 0.0689,
+    "koh": 0.097,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 0,
+    "creamy": 0,
+    "hardness": 0,
+    "iodine": 10,
+    "ins": 84
+  },
+  {
+    "oilId": "black_cumin_seed_oil",
+    "oil": "Black Cumin Seed Oil",
+    "naoh": 0.139,
+    "koh": 0.195,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 83,
+    "creamy": 16,
+    "hardness": 16,
+    "iodine": 133,
+    "ins": 62
+  },
+  {
+    "oilId": "borage_oil",
+    "oil": "Borage Oil",
+    "naoh": 0.1339,
+    "koh": 0.1886,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 68,
+    "creamy": 14,
+    "hardness": 14,
+    "iodine": 135,
+    "ins": 55
+  },
+  {
+    "oilId": "canola_oil",
+    "oil": "Canola Oil",
+    "naoh": 0.1328,
+    "koh": 0.187,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 91,
+    "creamy": 6,
+    "hardness": 6,
+    "iodine": 110,
+    "ins": 56
+  },
+  {
+    "oilId": "canola_oil-high_oleic_acid",
+    "oil": "Canola Oil, High Oleic Acid",
+    "naoh": 0.133,
+    "koh": 0.1873,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 90,
+    "creamy": 6,
+    "hardness": 6,
+    "iodine": 96,
+    "ins": 90
+  },
+  {
+    "oilId": "castor_bean_oil",
+    "oil": "Castor Bean Oil",
+    "naoh": 0.1286,
+    "koh": 0.1811,
+    "bubbly": 90,
+    "cleansing": 0,
+    "conditioning": 98,
+    "creamy": 90,
+    "hardness": 0,
+    "iodine": 86,
+    "ins": 95
+  },
+  {
+    "oilId": "cherry_kernel_oil",
+    "oil": "Cherry Kernel Oil",
+    "naoh": 0.1389,
+    "koh": 0.1956,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 87,
+    "creamy": 11,
+    "hardness": 11,
+    "iodine": 128,
+    "ins": 62
+  },
+  {
+    "oilId": "chicken_fat",
+    "oil": "Chicken Fat",
+    "naoh": 0.1356,
+    "koh": 0.191,
+    "bubbly": 1,
+    "cleansing": 1,
+    "conditioning": 59,
+    "creamy": 32,
+    "hardness": 33,
+    "iodine": 69,
+    "ins": 130
+  },
+  {
+    "oilId": "cocoa_butter",
+    "oil": "Cocoa Butter",
+    "naoh": 0.1378,
+    "koh": 0.1941,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 38,
+    "creamy": 61,
+    "hardness": 61,
+    "iodine": 37,
+    "ins": 157
+  },
+  {
+    "oilId": "coconut_oil-fractionated",
+    "oil": "Coconut Oil, Fractionated",
+    "naoh": 0.2321,
+    "koh": 0.3269,
+    "bubbly": 93,
+    "cleansing": 93,
+    "conditioning": 0,
+    "creamy": 0,
+    "hardness": 93,
+    "iodine": 1,
+    "ins": 324
+  },
+  {
+    "oilId": "coconut_oil-refined_76",
+    "oil": "Coconut Oil, Refined 76°",
+    "naoh": 0.191,
+    "koh": 0.269,
+    "bubbly": 67,
+    "cleansing": 67,
+    "conditioning": 10,
+    "creamy": 12,
+    "hardness": 79,
+    "iodine": 10,
+    "ins": 258
+  },
+  {
+    "oilId": "corn_oil",
+    "oil": "Corn Oil",
+    "naoh": 0.1368,
+    "koh": 0.1927,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 84,
+    "creamy": 14,
+    "hardness": 14,
+    "iodine": 117,
+    "ins": 69
+  },
+  {
+    "oilId": "cottonseed_oil",
+    "oil": "Cottonseed Oil",
+    "naoh": 0.1387,
+    "koh": 0.1954,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 71,
+    "creamy": 26,
+    "hardness": 26,
+    "iodine": 108,
+    "ins": 89
+  },
+  {
+    "oilId": "crisco_vegetable_shortening",
+    "oil": "Crisco® Vegetable Shortening",
+    "naoh": 0.1369,
+    "koh": 0.1928,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 74,
+    "creamy": 25,
+    "hardness": 25,
+    "iodine": 111,
+    "ins": 82
+  },
+  {
+    "oilId": "emu_oil",
+    "oil": "Emu Oil",
+    "naoh": 0.1377,
+    "koh": 0.1939,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 55,
+    "creamy": 32,
+    "hardness": 32,
+    "iodine": 60,
+    "ins": 128
+  },
+  {
+    "oilId": "evening_primrose_oil",
+    "oil": "Evening Primrose Oil",
+    "naoh": 0.1362,
+    "koh": 0.1918,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 89,
+    "creamy": 0,
+    "hardness": 0,
+    "iodine": 160,
+    "ins": 30
+  },
+  {
+    "oilId": "flaxseed_oil",
+    "oil": "Flaxseed Oil",
+    "naoh": 0.1358,
+    "koh": 0.1913,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 90,
+    "creamy": 9,
+    "hardness": 9,
+    "iodine": 180,
+    "ins": -6
+  },
+  {
+    "oilId": "grapeseed_oil",
+    "oil": "Grapeseed Oil",
+    "naoh": 0.1321,
+    "koh": 0.1861,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 88,
+    "creamy": 12,
+    "hardness": 12,
+    "iodine": 131,
+    "ins": 66
+  },
+  {
+    "oilId": "hazelnut_oil",
+    "oil": "Hazelnut Oil",
+    "naoh": 0.1369,
+    "koh": 0.1928,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 85,
+    "creamy": 8,
+    "hardness": 8,
+    "iodine": 97,
+    "ins": 94
+  },
+  {
+    "oilId": "hempseed_oil",
+    "oil": "Hempseed Oil",
+    "naoh": 0.1359,
+    "koh": 0.1914,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 90,
+    "creamy": 8,
+    "hardness": 8,
+    "iodine": 165,
+    "ins": 39
+  },
+  {
+    "oilId": "illipe_butter",
+    "oil": "Illipe Butter",
+    "naoh": 0.138,
+    "koh": 0.194,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 35,
+    "creamy": 62,
+    "hardness": 62,
+    "iodine": 33,
+    "ins": 152
+  },
+  {
+    "oilId": "jojoba_seed_liquid_wax",
+    "oil": "Jojoba Seed Liquid Wax",
+    "naoh": 0.0695,
+    "koh": 0.0979,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 12,
+    "creamy": 0,
+    "hardness": 0,
+    "iodine": 83,
+    "ins": 11
+  },
+  {
+    "oilId": "karanja_oil",
+    "oil": "Karanja Oil",
+    "naoh": 0.136,
+    "koh": 0.191,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 73,
+    "creamy": 12,
+    "hardness": 12,
+    "iodine": 85,
+    "ins": 98
+  },
+  {
+    "oilId": "kokum_butter",
+    "oil": "Kokum Butter",
+    "naoh": 0.135,
+    "koh": 0.19,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 37,
+    "creamy": 60,
+    "hardness": 60,
+    "iodine": 35,
+    "ins": 155
+  },
+  {
+    "oilId": "kukui_nut_oil",
+    "oil": "Kukui Nut Oil",
+    "naoh": 0.1351,
+    "koh": 0.1903,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 91,
+    "creamy": 8,
+    "hardness": 8,
+    "iodine": 168,
+    "ins": 24
+  },
+  {
+    "oilId": "lanolin",
+    "oil": "Lanolin",
+    "naoh": 0.0748,
+    "koh": 0.1054,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 0,
+    "creamy": 0,
+    "hardness": 0,
+    "iodine": 27,
+    "ins": 83
+  },
+  {
+    "oilId": "lard",
+    "oil": "Lard",
+    "naoh": 0.1399,
+    "koh": 0.197,
+    "bubbly": 1,
+    "cleansing": 1,
+    "conditioning": 52,
+    "creamy": 41,
+    "hardness": 42,
+    "iodine": 57,
+    "ins": 139
+  },
+  {
+    "oilId": "linseed_oil",
+    "oil": "Linseed Oil",
+    "naoh": 0.1358,
+    "koh": 0.1913,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 90,
+    "creamy": 9,
+    "hardness": 9,
+    "iodine": 180,
+    "ins": -6
+  },
+  {
+    "oilId": "macadamia_nut_oil",
+    "oil": "Macadamia Nut Oil",
+    "naoh": 0.1391,
+    "koh": 0.1959,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 61,
+    "creamy": 14,
+    "hardness": 14,
+    "iodine": 76,
+    "ins": 119
+  },
+  {
+    "oilId": "mango_butter",
+    "oil": "Mango Butter",
+    "naoh": 0.136,
+    "koh": 0.191,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 48,
+    "creamy": 49,
+    "hardness": 49,
+    "iodine": 45,
+    "ins": 146
+  },
+  {
+    "oilId": "mango_oil",
+    "oil": "Mango Oil",
+    "naoh": 0.134,
+    "koh": 0.188,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 61,
+    "creamy": 35,
+    "hardness": 35,
+    "iodine": 60,
+    "ins": 130
+  },
+  {
+    "oilId": "marula_oil",
+    "oil": "Marula Oil",
+    "naoh": 0.138,
+    "koh": 0.194,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 79,
+    "creamy": 18,
+    "hardness": 18,
+    "iodine": 73,
+    "ins": 119
+  },
+  {
+    "oilId": "meadowfoam_oil",
+    "oil": "Meadowfoam Oil",
+    "naoh": 0.12,
+    "koh": 0.169,
+    "bubbly": 0,
+    "cleansing": 5,
+    "conditioning": 95,
+    "creamy": 0,
+    "hardness": 0,
+    "iodine": 92,
+    "ins": 77
+  },
+  {
+    "oilId": "milk_fat",
+    "oil": "Milk Fat",
+    "naoh": 0.1599,
+    "koh": 0.2252,
+    "bubbly": 15,
+    "cleansing": 15,
+    "conditioning": 22,
+    "creamy": 40,
+    "hardness": 55,
+    "iodine": 30,
+    "ins": 191
+  },
+  {
+    "oilId": "mink_oil",
+    "oil": "Mink Oil",
+    "naoh": 0.1403,
+    "koh": 0.1976,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 0,
+    "creamy": 0,
+    "hardness": 0,
+    "iodine": 55,
+    "ins": 141
+  },
+  {
+    "oilId": "monoi_de_tahiti_oil",
+    "oil": "Monoï de Tahiti Oil",
+    "naoh": 0.1796,
+    "koh": 0.253,
+    "bubbly": 60,
+    "cleansing": 60,
+    "conditioning": 2,
+    "creamy": 13,
+    "hardness": 73,
+    "iodine": 9,
+    "ins": 246
+  },
+  {
+    "oilId": "moringa_oil",
+    "oil": "Moringa Oil",
+    "naoh": 0.139,
+    "koh": 0.195,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 73,
+    "creamy": 14,
+    "hardness": 14,
+    "iodine": 68,
+    "ins": 124
+  },
+  {
+    "oilId": "murumuru_butter",
+    "oil": "Murumuru Butter",
+    "naoh": 0.18,
+    "koh": 0.253,
+    "bubbly": 73,
+    "cleansing": 73,
+    "conditioning": 18,
+    "creamy": 9,
+    "hardness": 82,
+    "iodine": 25,
+    "ins": 250
+  },
+  {
+    "oilId": "mustard_oil",
+    "oil": "Mustard Oil",
+    "naoh": 0.123,
+    "koh": 0.172,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 41,
+    "creamy": 4,
+    "hardness": 4,
+    "iodine": 101,
+    "ins": 72
+  },
+  {
+    "oilId": "neem_tree_oil",
+    "oil": "Neem Tree Oil",
+    "naoh": 0.1372,
+    "koh": 0.1932,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 63,
+    "creamy": 33,
+    "hardness": 33,
+    "iodine": 89,
+    "ins": 124
+  },
+  {
+    "oilId": "olive_oil",
+    "oil": "Olive Oil",
+    "naoh": 0.1353,
+    "koh": 0.1906,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 82,
+    "creamy": 17,
+    "hardness": 17,
+    "iodine": 85,
+    "ins": 105
+  },
+  {
+    "oilId": "olive_oil-pomace",
+    "oil": "Olive Oil, Pomace",
+    "naoh": 0.135,
+    "koh": 0.19,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 83,
+    "creamy": 17,
+    "hardness": 17,
+    "iodine": 84,
+    "ins": 104
+  },
+  {
+    "oilId": "ostrich_oil",
+    "oil": "Ostrich Oil",
+    "naoh": 0.1385,
+    "koh": 0.1951,
+    "bubbly": 4,
+    "cleansing": 4,
+    "conditioning": 57,
+    "creamy": 32,
+    "hardness": 36,
+    "iodine": 97,
+    "ins": 128
+  },
+  {
+    "oilId": "palm_kernel_oil",
+    "oil": "Palm Kernel Oil",
+    "naoh": 0.1777,
+    "koh": 0.2503,
+    "bubbly": 61,
+    "cleansing": 61,
+    "conditioning": 18,
+    "creamy": 9,
+    "hardness": 70,
+    "iodine": 20,
+    "ins": 183
+  },
+  {
+    "oilId": "palm_oil",
+    "oil": "Palm Oil",
+    "naoh": 0.142,
+    "koh": 0.2,
+    "bubbly": 1,
+    "cleansing": 1,
+    "conditioning": 49,
+    "creamy": 49,
+    "hardness": 50,
+    "iodine": 53,
+    "ins": 145
+  },
+  {
+    "oilId": "peach_kernel_oil",
+    "oil": "Peach Kernel Oil",
+    "naoh": 0.1361,
+    "koh": 0.1917,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 91,
+    "creamy": 8,
+    "hardness": 8,
+    "iodine": 108,
+    "ins": 87
+  },
+  {
+    "oilId": "peanut_oil",
+    "oil": "Peanut Oil",
+    "naoh": 0.1367,
+    "koh": 0.1925,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 82,
+    "creamy": 11,
+    "hardness": 11,
+    "iodine": 92,
+    "ins": 99
+  },
+  {
+    "oilId": "perilla_oil",
+    "oil": "Perilla Oil",
+    "naoh": 0.138,
+    "koh": 0.193,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 87,
+    "creamy": 8,
+    "hardness": 8,
+    "iodine": 196,
+    "ins": -6
+  },
+  {
+    "oilId": "poppy_seed_oil",
+    "oil": "Poppy Seed Oil",
+    "naoh": 0.14,
+    "koh": 0.196,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 88,
+    "creamy": 12,
+    "hardness": 12,
+    "iodine": 140,
+    "ins": 54
+  },
+  {
+    "oilId": "pumpkin_seed_oil",
+    "oil": "Pumpkin Seed Oil",
+    "naoh": 0.1389,
+    "koh": 0.1956,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 83,
+    "creamy": 19,
+    "hardness": 19,
+    "iodine": 128,
+    "ins": 67
+  },
+  {
+    "oilId": "rice_bran_oil",
+    "oil": "Rice Bran Oil",
+    "naoh": 0.1284,
+    "koh": 0.1808,
+    "bubbly": 1,
+    "cleansing": 1,
+    "conditioning": 69,
+    "creamy": 25,
+    "hardness": 26,
+    "iodine": 110,
+    "ins": 70
+  },
+  {
+    "oilId": "rosehip_oil",
+    "oil": "Rosehip Oil",
+    "naoh": 0.135,
+    "koh": 0.189,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 89,
+    "creamy": 6,
+    "hardness": 6,
+    "iodine": 188,
+    "ins": 10
+  },
+  {
+    "oilId": "safflower_oil-high_linoleic_acid",
+    "oil": "Safflower Oil, High Linoleic Acid",
+    "naoh": 0.1374,
+    "koh": 0.1935,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 90,
+    "creamy": 7,
+    "hardness": 7,
+    "iodine": 145,
+    "ins": 47
+  },
+  {
+    "oilId": "safflower_oil-high_oleic_acid",
+    "oil": "Safflower Oil, High Oleic Acid",
+    "naoh": 0.1369,
+    "koh": 0.1928,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 92,
+    "creamy": 7,
+    "hardness": 7,
+    "iodine": 93,
+    "ins": 97
+  },
+  {
+    "oilId": "sesame_seed_oil",
+    "oil": "Sesame Seed Oil",
+    "naoh": 0.1336,
+    "koh": 0.1882,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 83,
+    "creamy": 15,
+    "hardness": 15,
+    "iodine": 110,
+    "ins": 81
+  },
+  {
+    "oilId": "shea_butter",
+    "oil": "Shea Butter",
+    "naoh": 0.1296,
+    "koh": 0.1825,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 54,
+    "creamy": 45,
+    "hardness": 45,
+    "iodine": 59,
+    "ins": 116
+  },
+  {
+    "oilId": "soybean_oil",
+    "oil": "Soybean Oil",
+    "naoh": 0.1359,
+    "koh": 0.1914,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 82,
+    "creamy": 16,
+    "hardness": 16,
+    "iodine": 131,
+    "ins": 61
+  },
+  {
+    "oilId": "soybean_oil-27_5_hydrogenated",
+    "oil": "Soybean Oil, 27.5% Hydrogenated",
+    "naoh": 0.1361,
+    "koh": 0.1917,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 49,
+    "creamy": 24,
+    "hardness": 24,
+    "iodine": 78,
+    "ins": 113
+  },
+  {
+    "oilId": "stearic_acid-animal-source",
+    "oil": "Stearic Acid, Animal-Source",
+    "naoh": 0.1413,
+    "koh": 0.199,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 0,
+    "creamy": 99,
+    "hardness": 99,
+    "iodine": 2,
+    "ins": 196
+  },
+  {
+    "oilId": "stearic_acid-vegetable-source",
+    "oil": "Stearic Acid, Vegetable-Source",
+    "naoh": 0.1411,
+    "koh": 0.1987,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 0,
+    "creamy": 99,
+    "hardness": 99,
+    "iodine": 2,
+    "ins": 196
+  },
+  {
+    "oilId": "sunflower_seed_oil",
+    "oil": "Sunflower Seed Oil",
+    "naoh": 0.1358,
+    "koh": 0.1913,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 87,
+    "creamy": 11,
+    "hardness": 11,
+    "iodine": 133,
+    "ins": 63
+  },
+  {
+    "oilId": "sunflower_seed_oil-high_oleic_acid",
+    "oil": "Sunflower Seed Oil, High Oleic Acid",
+    "naoh": 0.1351,
+    "koh": 0.1903,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 88,
+    "creamy": 7,
+    "hardness": 7,
+    "iodine": 83,
+    "ins": 106
+  },
+  {
+    "oilId": "tallow-beef",
+    "oil": "Tallow, Beef",
+    "naoh": 0.1419,
+    "koh": 0.1999,
+    "bubbly": 8,
+    "cleansing": 8,
+    "conditioning": 40,
+    "creamy": 50,
+    "hardness": 58,
+    "iodine": 45,
+    "ins": 147
+  },
+  {
+    "oilId": "tallow-deer",
+    "oil": "Tallow, Deer",
+    "naoh": 0.1382,
+    "koh": 0.1946,
+    "bubbly": 1,
+    "cleansing": 1,
+    "conditioning": 48,
+    "creamy": 44,
+    "hardness": 45,
+    "iodine": 31,
+    "ins": 166
+  },
+  {
+    "oilId": "tallow-sheep",
+    "oil": "Tallow, Sheep",
+    "naoh": 0.1384,
+    "koh": 0.1949,
+    "bubbly": 14,
+    "cleansing": 14,
+    "conditioning": 31,
+    "creamy": 37,
+    "hardness": 51,
+    "iodine": 54,
+    "ins": 156
+  },
+  {
+    "oilId": "tamanu_seed_oil",
+    "oil": "Tamanu Seed Oil",
+    "naoh": 0.1437,
+    "koh": 0.2024,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 73,
+    "creamy": 25,
+    "hardness": 25,
+    "iodine": 111,
+    "ins": 82
+  },
+  {
+    "oilId": "walnut_oil",
+    "oil": "Walnut Oil",
+    "naoh": 0.1349,
+    "koh": 0.19,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 78,
+    "creamy": 9,
+    "hardness": 9,
+    "iodine": 154,
+    "ins": 45
+  },
+  {
+    "oilId": "wheat_germ_oil",
+    "oil": "Wheat Germ Oil",
+    "naoh": 0.1319,
+    "koh": 0.1858,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 75,
+    "creamy": 19,
+    "hardness": 19,
+    "iodine": 128,
+    "ins": 58
+  },
+  {
+    "oilId": "yangu_cape_chestnut_oil",
+    "oil": "Yangu Cape Chestnut Oil",
+    "naoh": 0.138,
+    "koh": 0.193,
+    "bubbly": 0,
+    "cleansing": 0,
+    "conditioning": 76,
+    "creamy": 23,
+    "hardness": 23,
+    "iodine": 95,
+    "ins": 97
+  }
 ]
