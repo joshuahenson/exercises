@@ -19,3 +19,19 @@
 .input-unit input {
   width: 4.5em;
 }
+
+.error input {
+  border: 1px solid #f28484;
+  box-shadow: inset 0 0 3px  #f28484;
+}
+
+.error input:focus {
+  border: 1px solid #f28484;
+  box-shadow: inset 0 0 1px  #f28484;
+}
+
+.error p {
+  color: #f28484;
+  font-size: 0.8em;
+  margin: 0;
+}
