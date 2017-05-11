@@ -16,14 +16,6 @@ import './Calculator.css';
 
 // TODO: add notification when adding oil
 
-const handleSubmit = (e, history, setByPercent, byPercent, oilWeight) => {
-  e.preventDefault();
-  if (byPercent) {
-    setByPercent(byPercent, oilWeight);
-  }
-  history.push('/recipe');
-};
-
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
@@ -46,6 +38,7 @@ class Calculator extends React.Component {
     this.handleGtzBlur = this.handleGtzBlur.bind(this);
     this.validateGtz = this.validateGtz.bind(this);
     this.handleOilWeightChange = this.handleOilWeightChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   handlePercentBlur(e) {
     if (!this.state.touched[e.target.name]) {
@@ -55,7 +48,6 @@ class Calculator extends React.Component {
   }
   validatePercent(e, bool = false) {
     if (this.state.touched[e.target.name] || bool) {
-      console.log(e.target.value);
       if (e.target.value === '' || e.target.value <= 0 || e.target.value >= 100) {
         this.setState({ errors: { ...this.state.errors, [e.target.name]: 'Number between 0 and 100 required' } });
       } else {
@@ -79,7 +71,6 @@ class Calculator extends React.Component {
   }
   validateGtz(e, bool = false) {
     if (this.state.touched[e.target.name] || bool) {
-      console.log(e.target.value);
       if (e.target.value <= 0) {
         this.setState({ errors: { ...this.state.errors, [e.target.name]: 'Number greater than 0 required' } });
       } else {
@@ -91,15 +82,28 @@ class Calculator extends React.Component {
     this.props.setOilWeight(e.target.value);
     this.validateGtz(e);
   }
+  handleSubmit(e) {
+    const { history, setByPercent, byPercent, oilWeight } = this.props;
+    const { errors } = this.state;
+    e.preventDefault();
+    if (errors.waterPercent || errors.superfatting || errors.oilWeight) {
+      // TODO: alert errors
+    } else {
+      if (byPercent) {
+        setByPercent(byPercent, oilWeight);
+      }
+      history.push('/recipe');
+    }
+  }
   render() {
     const {
       soapType, pickSoapType, addOil, unit, pickUnit, oilWeight, waterPercent,
-      superfatting, byPercent, setByPercent, resetDefaults, clearAll, history
+      superfatting, byPercent, setByPercent, resetDefaults, clearAll
     } = this.props;
     const { errors } = this.state;
     return (
       <div className="calculator">
-        <form onSubmit={e => handleSubmit(e, history, setByPercent, byPercent, oilWeight)}>
+        <form onSubmit={this.handleSubmit}>
           <div className="row">
             <fieldset>
               <legend>Soap Type</legend>
