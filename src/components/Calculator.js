@@ -10,7 +10,7 @@ import Oils from './Oils';
 import InputUnit from './InputUnit';
 import {
   pickSoapType, addOil, pickUnit, setOilWeight, setWaterPercent, setSuperfatting, setByPercent,
-  resetDefaults, clearAll
+  resetDefaults
 } from '../actions';
 import './Calculator.css';
 
@@ -100,7 +100,7 @@ class Calculator extends React.Component {
   render() {
     const {
       soapType, pickSoapType, addOil, unit, pickUnit, oilWeight, waterPercent, oils,
-      superfatting, byPercent, setByPercent, resetDefaults, clearAll
+      superfatting, byPercent, setByPercent, resetDefaults
     } = this.props;
     const { errors } = this.state;
     const totalIngredients = oils.reduce((a, b) => (a + parseInt(b.value, 10)), 0) || 0;
@@ -198,9 +198,6 @@ class Calculator extends React.Component {
             <Button className="primary flex" type="button" clickHandler={resetDefaults}>
               Reset Defaults
             </Button>
-            <Button className="primary flex" type="button" clickHandler={clearAll}>
-              Clear All
-            </Button>
             <Button className="accent flex-two" type="submit">Calculate</Button>
           </div>
         </form>
@@ -225,7 +222,6 @@ Calculator.propTypes = {
   byPercent: PropTypes.bool,
   setByPercent: PropTypes.func,
   resetDefaults: PropTypes.func,
-  clearAll: PropTypes.func,
   history: PropTypes.object
 };
 
@@ -250,6 +246,5 @@ export default connect(
     setWaterPercent,
     setSuperfatting,
     setByPercent,
-    resetDefaults,
-    clearAll }
+    resetDefaults }
 )(Calculator);

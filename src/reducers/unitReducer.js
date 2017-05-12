@@ -6,8 +6,6 @@ export default(state = initialState, action) => {
       return action.unit;
     case 'RESET_DEFAULTS':
       return initialState;
-    case 'CLEAR_ALL':
-      return '';
     default:
       return state;
   }
