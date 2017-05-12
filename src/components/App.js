@@ -14,8 +14,8 @@ const App = () => {
         <div className="container">
           <Nav />
           <Switch>
-            <TransitionRoute exact path="/" transitionName="fade" component={Calculator} />
-            <TransitionRoute path="/recipe" transitionName="fade" component={Recipe} />
+            <TransitionRoute exact path="/" transitionName="fade-route" component={Calculator} />
+            <TransitionRoute path="/recipe" transitionName="fade-route" component={Recipe} />
           </Switch>
         </div>
       </div>

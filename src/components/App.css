@@ -23,11 +23,11 @@ body {
   width: 90%;
 }
 
-.fade-enter {
+.fade-route-enter {
   opacity: 0;
 }
 
-.fade-enter.fade-enter-active {
+.fade-route-enter.fade-route-enter-active {
     opacity: 1;
     transition: all 0.5s
 }
