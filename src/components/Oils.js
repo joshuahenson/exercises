@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 import InputUnit from './InputUnit';
 import { setOilValue, removeOil } from '../actions';
 import './Oils.css';
@@ -9,10 +10,18 @@ const Oils = ({ oils, unit, byPercent, setOilValue, removeOil, remaining, remain
   return (
     <div>
       <ul className="oils">
-        {
+        <CSSTransitionGroup
+          transitionName="fade"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}
+        >
+          {
           oils.map((oil) => {
             return (
-              <li key={oil.oil}>
+
+              <li
+                key={oil.oil}
+              >
                 <div className="i-b">
                   <InputUnit
                     id={`${oil.oilId}_oil_weight`} label={oil.oil} min="0" value={oil.value}
@@ -27,6 +36,7 @@ const Oils = ({ oils, unit, byPercent, setOilValue, removeOil, remaining, remain
             );
           })
         }
+        </CSSTransitionGroup>
       </ul>
       <p className={validating && remainingNum ? 'error' : ''}>
         {remaining}
