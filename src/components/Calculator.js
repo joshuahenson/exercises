@@ -29,7 +29,8 @@ class Calculator extends React.Component {
         waterPercent: '',
         superfatting: '',
         oilWeight: ''
-      }
+      },
+      validating: false
     };
     this.handlePercentBlur = this.handlePercentBlur.bind(this);
     this.validatePercent = this.validatePercent.bind(this);
@@ -82,11 +83,12 @@ class Calculator extends React.Component {
     this.props.setOilWeight(e.target.value);
     this.validateGtz(e);
   }
-  handleSubmit(e) {
+  handleSubmit(e, remainingNum) {
+    e.preventDefault();
     const { history, setByPercent, byPercent, oilWeight } = this.props;
     const { errors } = this.state;
-    e.preventDefault();
-    if (errors.waterPercent || errors.superfatting || errors.oilWeight) {
+    if (remainingNum || errors.waterPercent || errors.superfatting || errors.oilWeight) {
+      this.setState({ validating: true });
       // TODO: alert errors
     } else {
       if (byPercent) {
@@ -97,13 +99,16 @@ class Calculator extends React.Component {
   }
   render() {
     const {
-      soapType, pickSoapType, addOil, unit, pickUnit, oilWeight, waterPercent,
+      soapType, pickSoapType, addOil, unit, pickUnit, oilWeight, waterPercent, oils,
       superfatting, byPercent, setByPercent, resetDefaults, clearAll
     } = this.props;
     const { errors } = this.state;
+    const totalIngredients = oils.reduce((a, b) => (a + parseInt(b.value, 10)), 0) || 0;
+    const remainingNum = byPercent ? 100 - totalIngredients : oilWeight - totalIngredients;
+    const remaining = byPercent ? `${remainingNum}% remaining` : `${remainingNum} ${unit} remaining`;
     return (
       <div className="calculator">
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={e => this.handleSubmit(e, remainingNum)}>
           <div className="row">
             <fieldset>
               <legend>Soap Type</legend>
@@ -182,7 +187,10 @@ class Calculator extends React.Component {
                   checked={byPercent}
                   clickHandler={() => setByPercent(byPercent, oilWeight)}
                 />
-                <Oils />
+                <Oils
+                  validating={this.state.validating} totalIngredients={totalIngredients}
+                  oils={oils} remaining={remaining} remainingNum={remainingNum}
+                />
               </div>
             </fieldset>
           </div>
@@ -202,6 +210,7 @@ class Calculator extends React.Component {
 }
 
 Calculator.propTypes = {
+  oils: PropTypes.arrayOf(PropTypes.object),
   soapType: PropTypes.string,
   pickSoapType: PropTypes.func,
   addOil: PropTypes.func,
@@ -227,7 +236,8 @@ const mapStateToProps = (state) => {
     oilWeight: state.oilWeight,
     waterPercent: state.waterPercent,
     superfatting: state.superfatting,
-    byPercent: state.byPercent
+    byPercent: state.byPercent,
+    oils: state.oils
   };
 };
 

@@ -5,8 +5,7 @@ import InputUnit from './InputUnit';
 import { setOilValue, removeOil } from '../actions';
 import './Oils.css';
 
-const Oils = ({ oils, unit, byPercent, setOilValue, removeOil, oilWeight }) => {
-  const totalIngredients = oils.reduce((a, b) => (a + parseInt(b.value, 10)), 0);
+const Oils = ({ oils, unit, byPercent, setOilValue, removeOil, remaining, remainingNum, validating }) => {
   return (
     <div>
       <ul className="oils">
@@ -29,12 +28,8 @@ const Oils = ({ oils, unit, byPercent, setOilValue, removeOil, oilWeight }) => {
           })
         }
       </ul>
-      <p>
-        {
-          byPercent ?
-          `${100 - totalIngredients}% remaining` :
-          `${oilWeight - totalIngredients} ${unit} remaining`
-        }
+      <p className={validating && remainingNum ? 'error' : ''}>
+        {remaining}
       </p>
     </div>
   );
@@ -46,15 +41,15 @@ Oils.propTypes = {
   byPercent: PropTypes.bool,
   setOilValue: PropTypes.func,
   removeOil: PropTypes.func,
-  oilWeight: PropTypes.string
+  remaining: PropTypes.string,
+  remainingNum: PropTypes.number,
+  validating: PropTypes.bool
 };
 
 function mapStateToProps(state) {
   return {
-    oils: state.oils,
     unit: state.unit,
-    byPercent: state.byPercent,
-    oilWeight: state.oilWeight
+    byPercent: state.byPercent
   };
 }
 
