@@ -100,8 +100,8 @@ class Calculator extends React.Component {
     } = this.props;
     const { errors } = this.state;
     const remainingNum = byPercent ?
-      100 - (oils.reduce((a, b) => (a + parseInt(b.percent, 10)), 0) || 0) :
-      oilWeight - (oils.reduce((a, b) => (a + parseInt(b.value, 10)), 0) || 0);
+      100 - (oils.reduce((a, b) => (a + parseFloat(b.percent, 10)), 0) || 0) :
+      oilWeight - (oils.reduce((a, b) => (a + parseFloat(b.value, 10)), 0) || 0);
     const remaining = byPercent ? `${remainingNum}% remaining` : `${remainingNum} ${unit} remaining`;
     return (
       <div className="calculator">
