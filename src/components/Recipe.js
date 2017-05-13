@@ -5,8 +5,6 @@ import { Redirect } from 'react-router-dom';
 import round from 'lodash/round';
 import './Recipe.css';
 
-// TODO: validate other things in case someone loads route directly
-
 const Recipe = ({ oils, unit, oilWeight, waterPercent, soapType }) => {
   if (oils.length === 0) {
     return <Redirect to="/" />;
@@ -39,6 +37,47 @@ const Recipe = ({ oils, unit, oilWeight, waterPercent, soapType }) => {
           })}
         </tbody>
       </table>
+      {
+        soapType === 'naoh' &&
+        <table>
+          <thead>
+            <tr>
+              <th>Bar Qualities</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bubbly</td>
+              <td>{Math.round(oils.reduce((a, b) => (a + b.percent * b.bubbly / 100), 0))}</td>
+            </tr>
+            <tr>
+              <td>Cleansing</td>
+              <td>{Math.round(oils.reduce((a, b) => (a + b.percent * b.cleansing / 100), 0))}</td>
+            </tr>
+            <tr>
+              <td>Conditioning</td>
+              <td>{Math.round(oils.reduce((a, b) => (a + b.percent * b.conditioning / 100), 0))}</td>
+            </tr>
+            <tr>
+              <td>Creamy</td>
+              <td>{Math.round(oils.reduce((a, b) => (a + b.percent * b.creamy / 100), 0))}</td>
+            </tr>
+            <tr>
+              <td>Hardness</td>
+              <td>{Math.round(oils.reduce((a, b) => (a + b.percent * b.hardness / 100), 0))}</td>
+            </tr>
+            <tr>
+              <td>Iodine</td>
+              <td>{Math.round(oils.reduce((a, b) => (a + b.percent * b.iodine / 100), 0))}</td>
+            </tr>
+            <tr>
+              <td>Ins</td>
+              <td>{Math.round(oils.reduce((a, b) => (a + b.percent * b.ins / 100), 0))}</td>
+            </tr>
+          </tbody>
+        </table>
+      }
     </div>
   );
 };

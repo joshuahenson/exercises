@@ -6,6 +6,7 @@
 .recipe table {
   border-color: gray;
   border-collapse: collapse;
+  margin: 35px;
 }
 
 .recipe .ingredient {
