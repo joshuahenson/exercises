@@ -6,7 +6,7 @@ import InputUnit from './InputUnit';
 import { setOilValue, removeOil } from '../actions';
 import './Oils.css';
 
-const Oils = ({ oils, unit, byPercent, setOilValue, removeOil, remaining, remainingNum, validating }) => {
+const Oils = ({ oils, unit, byPercent, setOilValue, removeOil, remaining, remainingNum, validating, oilWeight }) => {
   return (
     <div>
       <ul className="oils">
@@ -24,9 +24,9 @@ const Oils = ({ oils, unit, byPercent, setOilValue, removeOil, remaining, remain
               >
                 <div className="i-b">
                   <InputUnit
-                    id={`${oil.oilId}_oil_weight`} label={oil.oil} min="0" value={oil.value}
-                    unit={byPercent ? '%' : unit}
-                    onChange={e => setOilValue(e.target.value, oil.oilId)}
+                    id={`${oil.oilId}_oil_weight`} label={oil.oil} min="0"
+                    value={byPercent ? oil.percent : oil.value} unit={byPercent ? '%' : unit}
+                    onChange={e => setOilValue(e.target.value, oil.oilId, byPercent, oilWeight)}
                   />
                 </div>
                 <button className="remove" type="button" onClick={() => removeOil(oil.oilId)}>
@@ -53,13 +53,15 @@ Oils.propTypes = {
   removeOil: PropTypes.func,
   remaining: PropTypes.string,
   remainingNum: PropTypes.number,
-  validating: PropTypes.bool
+  validating: PropTypes.bool,
+  oilWeight: PropTypes.string,
 };
 
 function mapStateToProps(state) {
   return {
     unit: state.unit,
-    byPercent: state.byPercent
+    byPercent: state.byPercent,
+    oilWeight: state.oilWeight
   };
 }
 

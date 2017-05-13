@@ -85,16 +85,12 @@ class Calculator extends React.Component {
   }
   handleSubmit(e, remainingNum) {
     e.preventDefault();
-    const { history, setByPercent, byPercent, oilWeight } = this.props;
     const { errors } = this.state;
     if (remainingNum || errors.waterPercent || errors.superfatting || errors.oilWeight) {
       this.setState({ validating: true });
       // TODO: alert errors
     } else {
-      if (byPercent) {
-        setByPercent(byPercent, oilWeight);
-      }
-      history.push('/recipe');
+      this.props.history.push('/recipe');
     }
   }
   render() {
@@ -103,8 +99,9 @@ class Calculator extends React.Component {
       superfatting, byPercent, setByPercent, resetDefaults
     } = this.props;
     const { errors } = this.state;
-    const totalIngredients = oils.reduce((a, b) => (a + parseInt(b.value, 10)), 0) || 0;
-    const remainingNum = byPercent ? 100 - totalIngredients : oilWeight - totalIngredients;
+    const remainingNum = byPercent ?
+      100 - (oils.reduce((a, b) => (a + parseInt(b.percent, 10)), 0) || 0) :
+      oilWeight - (oils.reduce((a, b) => (a + parseInt(b.value, 10)), 0) || 0);
     const remaining = byPercent ? `${remainingNum}% remaining` : `${remainingNum} ${unit} remaining`;
     return (
       <div className="calculator">
@@ -185,11 +182,11 @@ class Calculator extends React.Component {
                 <Checkbox
                   name="percent_checkbox" id="percent_checkbox" label="Add oils by percentage?"
                   checked={byPercent}
-                  clickHandler={() => setByPercent(byPercent, oilWeight)}
+                  clickHandler={() => setByPercent(byPercent)}
                 />
                 <Oils
-                  validating={this.state.validating} totalIngredients={totalIngredients}
-                  oils={oils} remaining={remaining} remainingNum={remainingNum}
+                  validating={this.state.validating} oils={oils}
+                  remaining={remaining} remainingNum={remainingNum}
                 />
               </div>
             </fieldset>

@@ -47,19 +47,20 @@ export function setSuperfatting(superfat) {
   };
 }
 
-export function setByPercent(inPercent, oilWeight) {
+export function setByPercent(inPercent) {
   return {
     type: 'OIL_BY_PERCENT',
-    inPercent,
-    oilWeight
+    inPercent
   };
 }
 
-export function setOilValue(value, oilId) {
+export function setOilValue(value, oilId, inPercent, oilWeight) {
   return {
     type: 'SET_OIL_VALUE',
     value,
-    oilId
+    oilId,
+    inPercent,
+    oilWeight
   };
 }
 
