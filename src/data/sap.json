@@ -1,18 +1,5 @@
 [
   {
-    "oilId": "almond_butter",
-    "oil": "Almond Butter",
-    "naoh": 0.082,
-    "koh": 0.115,
-    "bubbly": 1,
-    "cleansing": 1,
-    "conditioning": 74,
-    "creamy": 24,
-    "hardness": 25,
-    "iodine": 70,
-    "ins": 118
-  },
-  {
     "oilId": "almond_oil",
     "oil": "Almond Oil",
     "naoh": 0.1367,
@@ -24,19 +11,6 @@
     "hardness": 7,
     "iodine": 99,
     "ins": 97
-  },
-  {
-    "oilId": "aloe_vera_butter",
-    "oil": "Aloe Vera Butter",
-    "naoh": 0.1788,
-    "koh": 0.2518,
-    "bubbly": 0,
-    "cleansing": 0,
-    "conditioning": 0,
-    "creamy": 0,
-    "hardness": 0,
-    "iodine": 0,
-    "ins": 249
   },
   {
     "oilId": "apricot_kernel_oil",
@@ -63,19 +37,6 @@
     "hardness": 15,
     "iodine": 95,
     "ins": 95
-  },
-  {
-    "oilId": "avocado_butter",
-    "oil": "Avocado Butter",
-    "naoh": 0.1339,
-    "koh": 0.1886,
-    "bubbly": 0,
-    "cleansing": 0,
-    "conditioning": 61,
-    "creamy": 31,
-    "hardness": 31,
-    "iodine": 67,
-    "ins": 120
   },
   {
     "oilId": "avocado_oil",
@@ -234,8 +195,8 @@
     "ins": 157
   },
   {
-    "oilId": "coconut_oil-fractionated",
-    "oil": "Coconut Oil, Fractionated",
+    "oilId": "coconut_oil-fractionated-mct",
+    "oil": "Coconut Oil, Fractionated / MCT",
     "naoh": 0.2321,
     "koh": 0.3269,
     "bubbly": 93,
@@ -249,8 +210,8 @@
   {
     "oilId": "coconut_oil-refined_76",
     "oil": "Coconut Oil, Refined 76°",
-    "naoh": 0.191,
-    "koh": 0.269,
+    "naoh": 0.183,
+    "koh": 0.257,
     "bubbly": 67,
     "cleansing": 67,
     "conditioning": 10,
