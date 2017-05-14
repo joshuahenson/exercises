@@ -40,10 +40,6 @@
   background-color: #ffb0b0;
 }
 
-.oils .remove:focus {
-  outline: none;
-}
-
 p.error {
   color: #f28484;
 }

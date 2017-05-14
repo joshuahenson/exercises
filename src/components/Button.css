@@ -8,7 +8,7 @@ button {
   cursor: pointer;
 }
 
-button:focus, button:active {
+button:active {
   outline: none;
 }
 
