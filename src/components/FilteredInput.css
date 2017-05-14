@@ -1,8 +1,8 @@
-/*TODO: FLEX?
+/*TODO:
  smaller height on mobile
 */
-.filtered-container {
-  display: inline-block;
+.filtered-input-container {
+  position: relative;
 }
 
 .filtered-input {
@@ -69,12 +69,15 @@
 }
 
 button.clear-input {
-  line-height: 2.25em;
+  font-size: 1em;
   height: 2.25em;
+  width: 2.25em;
   text-align: center;
+  position: absolute;
   border: none;
-  position: relative;
-  left: -2.25em;
+  right: 0;
+  padding: 0;
+  margin: 0;
   color: #b4b4b4;
   cursor: default;
   transition: color 0.25s;

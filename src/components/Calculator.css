@@ -19,7 +19,7 @@ input {
   font-weight: 400;
   line-height: 2.25em;
   height: 2.25em;
-  padding-left: 0.625em;
+  padding: 0 0 0 0.625em;
   border: 1px solid #b4b4b4;
 }
 

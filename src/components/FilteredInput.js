@@ -19,14 +19,16 @@ class FilteredInput extends Component {
     const { data, clickHandler } = this.props;
     const { value } = this.state;
     return (
-      <div className="filtered-container">
-        <input
-          className="filtered-input" type="text" value={value}
-          onChange={this.filterData} placeholder="Search..."
-        />
-        <button className="clear-input" type="button" onClick={this.clearInput}>
+      <div>
+        <div className="filtered-input-container">
+          <input
+            className="filtered-input" type="text" value={value}
+            onChange={this.filterData} placeholder="Search..."
+          />
+          <button className="clear-input" type="button" onClick={this.clearInput}>
           X
         </button>
+        </div>
         <ul className="filtered-list">
           {
             data.filter(datum => datum.oil.toLowerCase().indexOf(value.toLowerCase()) >= 0)
