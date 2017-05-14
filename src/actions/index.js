@@ -69,3 +69,40 @@ export function resetDefaults() {
     type: 'RESET_DEFAULTS'
   };
 }
+
+function showNotification(id, message) {
+  return {
+    type: 'SHOW_NOTIFICATION',
+    id,
+    message
+  };
+}
+
+function clearNotification(id) {
+  return {
+    type: 'CLEAR_NOTIFICATION',
+    id
+  };
+}
+
+let nextNotificationId = 0;
+export function showNotificationTimeout(message) {
+  return (dispatch) => {
+    const id = nextNotificationId++;
+    dispatch(showNotification(id, message));
+    setTimeout(() => {
+      dispatch(clearNotification(id));
+    }, 2000);
+  };
+}
+
+export function addOilNotification(oil) {
+  return (dispatch) => {
+    const id = nextNotificationId++;
+    dispatch(addOil(oil));
+    dispatch(showNotification(id, `${oil.oil} has been added`));
+    setTimeout(() => {
+      dispatch(clearNotification(id));
+    }, 2000);
+  };
+}

@@ -4,6 +4,7 @@ import TransitionRoute from './TransitionRoute';
 import Calculator from './Calculator';
 import Recipe from './Recipe';
 import Nav from './Nav';
+import Notification from './Notification';
 import './App.css';
 
 // TODO: Add 404
@@ -13,6 +14,7 @@ const App = () => {
       <div className="row">
         <div className="container">
           <Nav />
+          <Notification />
           <Switch>
             <TransitionRoute exact path="/" transitionName="fade-route" component={Calculator} />
             <TransitionRoute path="/recipe" transitionName="fade-route" component={Recipe} />

@@ -9,7 +9,7 @@ import Radio from './Radio';
 import Oils from './Oils';
 import InputUnit from './InputUnit';
 import {
-  pickSoapType, addOil, pickUnit, setOilWeight, setWaterPercent, setSuperfatting, setByPercent,
+  pickSoapType, addOilNotification, pickUnit, setOilWeight, setWaterPercent, setSuperfatting, setByPercent,
   resetDefaults
 } from '../actions';
 import './Calculator.css';
@@ -95,7 +95,7 @@ class Calculator extends React.Component {
   }
   render() {
     const {
-      soapType, pickSoapType, addOil, unit, pickUnit, oilWeight, waterPercent, oils,
+      soapType, pickSoapType, addOilNotification, unit, pickUnit, oilWeight, waterPercent, oils,
       superfatting, byPercent, setByPercent, resetDefaults
     } = this.props;
     const { errors } = this.state;
@@ -173,7 +173,7 @@ class Calculator extends React.Component {
           <div className="row">
             <fieldset>
               <legend>Available Oils</legend>
-              <FilteredInput data={sap} clickHandler={addOil} />
+              <FilteredInput data={sap} clickHandler={addOilNotification} />
             </fieldset>
 
             <fieldset>
@@ -207,7 +207,7 @@ Calculator.propTypes = {
   oils: PropTypes.arrayOf(PropTypes.object),
   soapType: PropTypes.string,
   pickSoapType: PropTypes.func,
-  addOil: PropTypes.func,
+  addOilNotification: PropTypes.func,
   unit: PropTypes.string,
   pickUnit: PropTypes.func,
   oilWeight: PropTypes.string,
@@ -237,7 +237,7 @@ const mapStateToProps = (state) => {
 export default connect(
   mapStateToProps,
   { pickSoapType,
-    addOil,
+    addOilNotification,
     pickUnit,
     setOilWeight,
     setWaterPercent,
