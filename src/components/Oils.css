@@ -1,33 +1,25 @@
 .oils {
-  display: inline-block;
-  vertical-align: top;
-  width: 400px;
   padding: 0;
   margin: 0;
 }
 
 .oils li {
-  width: 100%;
-  position: relative;
-  display: inline-block;
   padding: 3px 0;
   user-select: none;
 }
 
+.oils .oil {
+  display: inline-block;
+}
+
 .oils .remove {
-  padding: 0;
   margin: 0;
-  position: absolute;
   text-align: center;
-  top: 8px;
-  right: 0;
+  vertical-align: middle;
   color: #b4b4b4;
-  height: 1.8em;
-  width: 1.8em;
   border: none;
-  border-radius: 50%;
   background-color: transparent;
-  transition: color 0.25s, background-color 0.5s;
+  transition: color 0.25s;
 }
 
 .oils .remove:active {
@@ -36,8 +28,7 @@
 }
 
 .oils .remove:hover {
-  color: white;
-  background-color: #ffb0b0;
+  color: #f28484;
 }
 
 p.error {
@@ -49,8 +40,8 @@ p.error {
 }
 
 .fade-enter.fade-enter-active {
-    opacity: 1;
-    transition: all 0.5s;
+  opacity: 1;
+  transition: all 0.5s;
 }
 
 .fade-leave {
@@ -58,6 +49,16 @@ p.error {
 }
 
 .fade-leave.fade-leave-active {
-    opacity: 0;
-    transition: all 0.5s;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+@media only screen and (min-width: 28em) {
+  .oils {
+    width: 25.5em;
+  }
+
+  .oils .oil {
+    width: 23.5em;
+  }
 }

@@ -22,7 +22,7 @@ const Oils = ({ oils, unit, byPercent, setOilValue, removeOil, remaining, remain
               <li
                 key={oil.oil}
               >
-                <div className="i-b">
+                <div className="oil">
                   <InputUnit
                     id={`${oil.oilId}_oil_weight`} label={oil.oil} min="0"
                     value={byPercent ? oil.percent : oil.value} unit={byPercent ? '%' : unit}

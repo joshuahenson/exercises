@@ -5,7 +5,6 @@ ul {
 fieldset {
   border: 1px solid #E0EFF1;
   border-radius: 5px;
-  flex-shrink: 0;
   padding: 20px;
   margin: 15px;
 }
